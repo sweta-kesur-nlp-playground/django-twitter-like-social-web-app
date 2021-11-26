@@ -37,11 +37,11 @@ def register(request):
             
             if CustomUser.objects.filter(username1=username1).exists():
                 messages.info(request, 'username taken')
-                return redirect('register')
+                return redirect('home')
 
             elif CustomUser.objects.filter(email=email).exists():
                 messages.info(request, 'Email taken')
-                return redirect('register')
+                return redirect('home')
 
             else:
                 user = CustomUser.objects.create_user(username1=username1, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
@@ -50,7 +50,7 @@ def register(request):
 
         else:
             messages.info(request, 'Password not matching...')
-            return redirect('register')
+            return redirect('home')
 
         return redirect('home')
 
