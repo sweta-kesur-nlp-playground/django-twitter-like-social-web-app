@@ -6,7 +6,7 @@ from django.template import RequestContext
 from django.views import View
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import auth
 import facebook
 
 class CommentView(View):
@@ -35,16 +35,16 @@ def register(request):
 
         if password == password2: 
             
-            if User.objects.filter(username=username).exists():
+            if CustomUser.objects.filter(username=username).exists():
                 messages.info(request, 'username taken')
                 return redirect('register')
 
-            elif User.objects.filter(email=email).exists():
+            elif CustomUser.objects.filter(email=email).exists():
                 messages.info(request, 'Email taken')
                 return redirect('register')
 
             else:
-                user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
+                user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
                 user.save()
                 print(request, 'user created')
 
@@ -52,7 +52,7 @@ def register(request):
             messages.info(request, 'Password not matching...')
             return redirect('register')
 
-        return redirect('myaccount')
+        return redirect('home')
 
     else:
         return render(request, 'register.html', {})
