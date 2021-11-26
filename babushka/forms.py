@@ -7,7 +7,7 @@ class CustomUserCreationForm(UserCreationForm):
 	class Meta:
 		model = CustomUser
 		# fields = "__all__"
-		fields = ["customusername", "firstname", "lastname", "email", "password", "gender", "is_author", "is_reader"]
+		fields = ["customusername", "firstname", "lastname", "email", "password", "gender"]
 
 class CommentForm(forms.ModelForm):
 
