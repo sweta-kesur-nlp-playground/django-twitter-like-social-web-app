@@ -67,7 +67,7 @@
                                                 <!-- Login form end -->
                                                     <div class="col-2">
                                                         <!-- Register form start -->
-                                                        <form action="{% url 'registerview' %}" method="post" id="registerform">
+                                                        <form action="{% url 'register' %}" method="post" id="registerform">
                                                             <div class="woocommerce-billing-fields">
                                                                 <h3>Register </h3>
                                                                 <div class="woocommerce-billing-fields__field-wrapper">
@@ -121,7 +121,7 @@
                                                                         <p class="form-row form-row-wide validate-required validate-confirmpassword" id="confirmpassword" data-priority="110">
                                                                             <label for="confirmpassword" class="">Confirm Password&nbsp;<abbr class="required" title="required">*</abbr></label>
                                                                             <span class="woocommerce-input-wrapper">
-                                                                                <input type="password" class="input-text" name="confirmpassword" id="confirmpassword" placeholder="" value="" />
+                                                                                <input type="password" class="input-text" name="password2" id="confirmpassword" placeholder="" value="" />
                                                                                 <div class="register-form-text-message"></div>
                                                                             </span>
                                                                         </p>
@@ -237,29 +237,29 @@
                         });
                     }
                 });
-                if(valid){
-                    let data = $this.serialize();
-                    $.ajax({
-                        url: $this.attr("action"),
-                        type: "POST",
-                        data: data,
-                        dataType: "json",
-                        success: function(resp){
-                            if(resp.message == "success"){
-                                // alert("Saved successful");
-                                $("#registerform")[0].reset();
-                                $(".form-message").append("Registration completed successfully");
-                            }
-                            else{
-                                alert(resp.message);
-                            }
-                        },
-                        error: function(resp){
-                            $(".register-form-message").append("Couldn't save data. Something went wrong");
-                        }
-                    });
-                }
-                return false;
+                // if(valid){
+                //     let data = $this.serialize();
+                //     $.ajax({
+                //         url: $this.attr("action"),
+                //         type: "POST",
+                //         data: data,
+                //         dataType: "json",
+                //         success: function(resp){
+                //             if(resp.message == "success"){
+                //                 // alert("Saved successful");
+                //                 $("#registerform")[0].reset();
+                //                 $(".form-message").append("Registration completed successfully");
+                //             }
+                //             else{
+                //                 alert(resp.message);
+                //             }
+                //         },
+                //         error: function(resp){
+                //             $(".register-form-message").append("Couldn't save data. Something went wrong");
+                //         }
+                //     });
+                // }
+                // return false;
             });
         </script>
     </body>

@@ -22,18 +22,53 @@ class CommentView(View):
 	def get(self,request, *args, **kwargs):
 	    return render(request, "blog.html", {})
 
-class UserView(View):
-	form_class = CustomUserCreationForm
-	def post(self, request, *args, **kwargs):
-	    if request.is_ajax():
-	        form = self.form_class(request.POST)
-	        if form.is_valid():
-	            form.save()
-	            return JsonResponse({"message": "success"})
-	        return JsonResponse({"message": "Validation failed"})
-	    return JsonResponse({"message": "Wrong request"})
-	def get(self,request, *args, **kwargs):
-	    return render(request, "register.html", {})
+def register(request):
+
+    if request.method == 'POST' :
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        email = request.POST['email']
+        gender = request.POST['gender']
+
+        if password == password2: 
+            
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'username taken')
+                return redirect('register')
+
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, 'Email taken')
+                return redirect('register')
+
+            else:
+                user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
+                user.save()
+                print(request, 'user created')
+
+        else:
+            messages.info(request, 'Password not matching...')
+            return redirect('register')
+
+        return redirect('myaccount')
+
+    else:
+        return render(request, 'register.html', {})
+
+# class UserView(View):
+# 	form_class = CustomUserCreationForm
+# 	def post(self, request, *args, **kwargs):
+# 	    if request.is_ajax():
+# 	        form = self.form_class(request.POST)
+# 	        if form.is_valid():
+# 	            form.save()
+# 	            return JsonResponse({"message": "success"})
+# 	        return JsonResponse({"message": "Validation failed"})
+# 	    return JsonResponse({"message": "Wrong request"})
+# 	def get(self,request, *args, **kwargs):
+# 	    return render(request, "register.html", {})
 
 class CommentListView(View):
 	
