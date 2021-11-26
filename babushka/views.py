@@ -27,7 +27,7 @@ def register(request):
     if request.method == 'POST' :
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
-        username = request.POST['username1']
+        username1 = request.POST['username1']
         password = request.POST['password']
         password2 = request.POST['password2']
         email = request.POST['email']
@@ -35,7 +35,7 @@ def register(request):
 
         if password == password2: 
             
-            if CustomUser.objects.filter(username=username).exists():
+            if CustomUser.objects.filter(username1=username1).exists():
                 messages.info(request, 'username taken')
                 return redirect('register')
 
@@ -44,7 +44,7 @@ def register(request):
                 return redirect('register')
 
             else:
-                user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
+                user = CustomUser.objects.create_user(username1=username1, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
                 user.save()
                 print(request, 'user created')
 
