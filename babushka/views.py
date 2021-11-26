@@ -6,6 +6,7 @@ from django.template import RequestContext
 from django.views import View
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.contrib.auth.models import User, auth
 import facebook
 
 class CommentView(View):
@@ -26,7 +27,6 @@ class UserView(View):
 	def post(self, request, *args, **kwargs):
 	    if request.is_ajax():
 	        form = self.form_class(request.POST)
-	        form.save()
 	        if form.is_valid():
 	            form.save()
 	            return JsonResponse({"message": "success"})
