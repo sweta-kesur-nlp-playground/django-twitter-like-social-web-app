@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.shortcuts import render, redirect
-from .models import Comment, Message, BookUser
-from .forms import CommentForm, MessageForm, RegisterForm
+from .models import Comment, Message, BookUser, CustomUser
+from .forms import CommentForm, MessageForm, RegisterForm, CustomUserCreationForm
 from django.template import RequestContext
 from django.views import View
 from django.http import HttpResponse, JsonResponse
@@ -22,7 +22,7 @@ class CommentView(View):
 	    return render(request, "blog.html", {})
 
 class UserView(View):
-	form_class = RegisterForm
+	form_class = CustomUserCreationForm
 	def post(self, request, *args, **kwargs):
 	    if request.is_ajax():
 	        form = self.form_class(request.POST)
