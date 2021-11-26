@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>About - The Story of Babushka </title>
+        <!-- stylesheet and meta tag start -->
+        {% include 'head.html' %}
+        {% block content-head %}
+        {% endblock %}
+        <!-- stylesheet and meta tag end -->
+    </head>
+    <body class="error404 custom-background theme-babushka woocommerce-js hfeed elementor-default">
+        <div class="contentwrapper">
+            <!-- Header start -->
+                {% include 'header.html' %}
+                {% block content-header %}
+                {% endblock %}
+            <!-- Header end -->
+            <div class="page-404">
+                <div class="bg">
+                    <h1>404</h1>
+                    <h2>You must have gotten lost on your journey! This page doesn’t exist…</h2>
+                    <a href="{% url 'home' %}" class="btn-green">Return back home</a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer start -->
+            {% include 'footer.html' %}
+            {% block content-footer %}
+            {% endblock %}
+        <!-- Footer end -->
+    </body>
+</html>
+

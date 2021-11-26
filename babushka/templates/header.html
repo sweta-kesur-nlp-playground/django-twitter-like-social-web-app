@@ -1,0 +1,35 @@
+{% load static %}
+{% block content-header %}
+	<div class="navwrapper" id="navwrapper">
+        <div class="container980">
+            <div class="rc_nav" id="centered_nav">
+                <div class="menu-block">
+                    <div class="padd"></div>
+                    <a href="{% url 'home' %}">Home</a> 
+                    <a href="{% url 'about' %}">About</a> 
+                    <!-- <a href="">Shop</a>  -->
+                    <a href="{% url 'blog' %}">Blog</a>
+                    <a href="{% url 'contact' %}">Contact</a> 
+                    <a href="{% url 'register' %}"><i class="fas fa-user-circle"></i></a>
+                    <a class="wpmenucart-contents empty-wpmenucart" style="display: none;">&nbsp;</a>
+                    <ul>
+                        <li class="social">
+                            <a href="https://www.facebook.com/Babushka-Story-106038245235948" title="Facebok">
+                                <noscript><img src="{% static 'img/facebook.svg' %}" alt="FB logo" /></noscript>
+                                <img
+                                    class="lazyload"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/facebook.svg"
+                                    alt="FB logo"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="javascript:void(0);" title="Menu" style="font-size: 22px;" class="icon space" onclick="myFunction()">&#9776;</a>
+                    <a href="javascript:void(0);" style="font-size: 22px;" class="cross space" onclick="myFunction()">&#10005;</a>
+                </div>
+                <span class="center in-menu">&copy; The Story of Babushka, 2020</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

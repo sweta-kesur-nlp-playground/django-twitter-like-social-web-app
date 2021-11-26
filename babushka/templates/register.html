@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>About - The Story of Babushka </title>
+        <!-- stylesheet and meta tag start -->
+        {% include 'head.html' %}
+        {% block content-head %}
+        {% endblock %}
+        <!-- stylesheet and meta tag end -->
+    </head>
+    <body class="page-template-default page page-id-552 custom-background theme-babushka woocommerce-checkout woocommerce-page woocommerce-js elementor-default">
+        <div class="contentwrapper">
+            <!-- Header start -->
+                {% include 'header.html' %}
+                {% block content-header %}
+                {% endblock %}
+            <!-- Header end -->
+            <div id="section">
+                <section>
+                    <div id="primary" class="site-main">
+                        <article id="post-552" class="post-552 page type-page status-publish hentry">
+                            <header class="entry-header">
+                                <h1 class="entry-title">Checkout</h1>
+                            </header>
+                            <!-- .entry-header -->
+
+                            <div class="entry-content">
+                                <p>
+                                    <strong><code></code></strong>
+                                </p>
+                                <div class="woocommerce">
+                                    <strong>
+                                        <code>
+                                            <!-- Login form start -->
+                                            <form action="{% url 'home' %}" name="loginform" method="post" id="loginform" enctype="multipart/form-data" novalidate="novalidate">
+                                                <div class="col2-set" id="customer_details">
+                                                    <div class="col-1">
+                                                        <div class="woocommerce-shipping-fields"></div>
+                                                        <div class="woocommerce-additional-fields">
+                                                            <h3>Login</h3>
+                                                            {% csrf_token %}
+                                                            <div class="woocommerce-additional-fields__field-wrapper">
+                                                                <div class="login-validate-required">
+                                                                    <p class="form-row form-row-wide" id="username" >
+                                                                        <label for="username" class="">Username&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                        <span class="woocommerce-input-wrapper">
+                                                                            <input type="text" class="input-text" name="username" id="username" placeholder="" value="" />
+                                                                            <div class="login-form-text-message"></div>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="login-validate-required">
+                                                                    <p class="form-row form-row-wide " id="password" data-priority="110">
+                                                                        <label for="password" class="">Password&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                        <span class="woocommerce-input-wrapper">
+                                                                            <input type="password" class="input-text" name="password" id="password" placeholder="" value="" />
+                                                                            <div class="login-form-text-message"></div>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="button alt" name="login" id="login" value="Login" data-value="Login">Login</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <!-- Login form end -->
+                                                    <div class="col-2">
+                                                        <!-- Register form start -->
+                                                        <form action="{% url 'register' %}" method="post" id="registerform">
+                                                            <div class="woocommerce-billing-fields">
+                                                                <h3>Register </h3>
+                                                                <div class="woocommerce-billing-fields__field-wrapper">
+                                                                    {% csrf_token %}
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide " id="username" data-priority="110">
+                                                                            <label for="username" class="">Username&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                            <span class="woocommerce-input-wrapper">
+                                                                                <input type="text" class="input-text" name="username" id="username" placeholder="" value="" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide" id="firstname" data-priority="10">
+                                                                            <label for="firstname" class="">First name&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                            <span class="woocommerce-input-wrapper">
+                                                                                <input type="text" class="input-text" name="firstname" id="firstname" placeholder="" value="" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide" id="lastname" data-priority="10">
+                                                                            <label for="lastname" class="">Last name&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                            <span class="woocommerce-input-wrapper">
+                                                                                <input type="text" class="input-text" name="lastname" id="lastname" placeholder="" value=""/>
+                                                                                <div class="register-form-text-message"></div>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide  validate-email" id="email" data-priority="110">
+                                                                            <label for="email" class="">Email address&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                            <span class="woocommerce-input-wrapper">
+                                                                                <input type="email" class="input-text" name="email" id="email" placeholder="" value=""  />
+                                                                                <div class="register-form-text-message"></div>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide validate-password" id="password" data-priority="110">
+                                                                            <label for="password" class="">Password&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                            <span class="woocommerce-input-wrapper">
+                                                                                <input type="password" class="input-text" name="password" id="password" placeholder="" value="" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide validate-required validate-confirmpassword" id="confirmpassword" data-priority="110">
+                                                                            <label for="confirmpassword" class="">Confirm Password&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                                                            <span class="woocommerce-input-wrapper">
+                                                                                <input type="password" class="input-text" name="confirmpassword" id="confirmpassword" placeholder="" value="" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="validate-required">
+                                                                        <p class="form-row form-row-wide" id="gender" data-priority="110">
+                                                                            <label for="gender" class="">Gender&nbsp;</label>
+                                                                            <div>
+                                                                                <input type="radio" id="female" name="gender" value="female" >
+                                                                                <label for="female">female</label>
+                                                                            </div>
+                                                                            <div>
+                                                                                <input type="radio" id="male" name="gender" value="male" >
+                                                                                <label for="male">male</label>
+                                                                            </div>
+                                                                            <div class="register-form-text-message"></div>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="button alt" name="register" id="register" value="Register" data-value="Register">Register</button>
+                                                            <div class="register-form-message"></div>
+                                                        </form>
+                                                        <!-- Register form end -->
+                                                    </div>
+                                                </div>
+                                        </code>
+                                    </strong>
+                                </div>
+                                <p></p>
+                            </div>
+                            <!-- .entry-content -->
+                        </article>
+                        <!-- #post-552 -->
+                    </div>
+                    <!-- #main -->
+                </section>
+            </div>
+        <!-- Footer start -->
+            {% include 'footer.html' %}
+            {% block content-footer %}
+            {% endblock %}
+        <!-- Footer end -->
+        <script type="text/javascript">
+            // Login Form
+            $("#loginform").on("submit", function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var $this = $(this);
+                var valid = true;
+                $('#loginform input').each(function() {
+                    let $this = $(this);
+                    
+                    if(!$this.val()) {
+                        valid = false;
+                        $this.parents('.login-validate-required').find('.login-form-text-message').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
+                        $this.parents('.login-validate-required').find('.login-form-text-message').css({'color':'#a00'});
+                        $this.parents('.login-validate-required').find('input').css({'border-color': '#a00'});
+                        $this.parents('.login-validate-required').find('label').css({'color': '#a00'});
+                        $(this).parents('.login-validate-required').find('.login-form-text-message').css({'display': 'block'});
+                        $this.parents('.login-validate-required').find('input').click(function(){
+                            $(this).css({'border-color': '#6dc22e'});
+                            $(this).parents('.login-validate-required').find('label').css({'color': 'black'});
+                            $(this).parents('.login-validate-required').find('.login-form-text-message').css({'display': 'none'});
+                        });
+                    }
+                });
+                // if(valid){
+                //     let data = $this.serialize();
+                //     $.ajax({
+                //         url: $this.attr("action"),
+                //         type: "POST",
+                //         data: data,
+                //         dataType: "json",
+                //         success: function(resp){
+                //             if(resp.message == "success"){
+                //                 // alert("Saved successful");
+                //                 $("#commentform")[0].reset();
+                //                 $(".form-message").append("Comment added successfully").fadeOut(10000);
+                //             }
+                //             else{
+                //                 alert(resp.message);
+                //             }
+                //         },
+                //         error: function(resp){
+                //             $(".form-message").append("Couldn't save data. Something went wrong").fadeOut(10000);
+                //         }
+                //     });
+                // }
+                // return false;
+            });
+            // Register Form
+            $("#registerform").on("submit", function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var $this = $(this);
+                var valid = true;
+                $('#registerform input').each(function() {
+                    let $this = $(this);
+                    
+                    if(!$this.val()) {
+                        valid = false;
+                        // alert("empty values");
+                        $this.parents('.validate-required').find('.register-form-text-message').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
+                        $this.parents('.validate-required').find('.register-form-text-message').css({'color':'#a00'});
+                        $this.parents('.validate-required').find('input').css({'border-color': '#a00'});
+                        $this.parents('.validate-required').find('label').css({'color': '#a00'});
+                        $(this).parents('.validate-required').find('.register-form-text-message').css({'display': 'block'});
+                        $this.parents('.validate-required').find('input').click(function(){
+                            $(this).css({'border-color': '#6dc22e'});
+                            $(this).parents('.validate-required').find('label').css({'color': 'black'});
+                            $(this).parents('.validate-required').find('.register-form-text-message').css({'display': 'none'});
+                        });
+                    }
+                });
+                if(valid){
+                    let data = $this.serialize();
+                    $.ajax({
+                        url: $this.attr("action"),
+                        type: "POST",
+                        data: data,
+                        dataType: "json",
+                        success: function(resp){
+                            if(resp.message == "success"){
+                                // alert("Saved successful");
+                                $("#registerform")[0].reset();
+                                $(".form-message").append("Registration completed successfully");
+                            }
+                            else{
+                                alert(resp.message);
+                            }
+                        },
+                        error: function(resp){
+                            $(".register-form-message").append("Couldn't save data. Something went wrong");
+                        }
+                    });
+                }
+                return false;
+            });
+        </script>
+    </body>
+</html>
+

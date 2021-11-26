@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>About - The Story of Babushka </title>
+        <!-- stylesheet and meta tag start -->
+        {% include 'head.html' %}
+        {% block content-head %}
+        {% endblock %}
+        <!-- stylesheet and meta tag end -->
+    </head>
+    <body class="page-template page-template-page-about page-template-page-about-php page page-id-9 custom-background theme-babushka woocommerce-no-js elementor-default elementor-kit-42 elementor-page elementor-page-9">
+        <div class="contentwrapper">
+            <!-- Header start -->
+                {% include 'header.html' %}
+                {% block content-header %}
+                {% endblock %}
+            <!-- Header end -->
+            <div id="section" class="about-us">
+                <section class="firstSec">
+                    <div class="container" style="padding-bottom: 4em;">
+                        <div class="mainlogoblack" id="mainlogo">
+                            <a href="{% url 'home' %}">
+                                <noscript><img src="{% static 'img/Logo_black.svg'%}" alt="Logo" /></noscript>
+                                <img
+                                    class="lazyload"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="{% static 'img/Logo_black.svg'%}"
+                                    alt="Logo"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container secondCont">
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="center green">WHAT IS A BABUSHKA?</h1>
+                                <p>
+                                    The babushka doll, also known as a matryoshka or Russian nesting doll, is a traditional Russian toy first made over 100 years ago. The doll has come to symbolise Russian folk culture, as well as the
+                                    complex and beautiful layers of women. Babushka dolls are made of wood and painted in bright colours and patterns.
+                                </p>
+                                <p>
+                                    Each babushka is comprised of many round dolls, each a little smaller than the last. They separate at the middle so that each doll can be placed inside the one before it. There are some babushka dolls
+                                    with as many as fifty dolls nested inside.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <noscript><img src="{% static 'img/butterfly_1.svg'%}" class="rounded mx-auto d-block padd4 butterfly" alt="butterfly" /></noscript>
+                <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                    data-src="http://babushkastory.herokuapp.com/static/img/butterfly_1.svg"
+                    class="lazyload rounded mx-auto d-block padd4 butterfly"
+                    alt="butterfly"
+                />
+                <section class="padd8 second-sec">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="center green">The Story of Babushka</h2>
+                                <p>This is the story of one very special babushka doll and her five bodies.</p>
+                                <p>
+                                    There was the outermost body, <strong>Antonia.</strong> She was pure beauty and everyone who saw her raved about her good looks. Beneath that body of beauty hid the second body,
+                                    <strong>Loretta,</strong> who was richly adorned. She wore gold ornaments, and her robe was decorated with many different gems that glittered like the ocean on a sunny day. Hidden within the rich body was
+                                    <strong> Paula</strong> the body that held all the talents. Whatever Paula did, she was sure to succeed. She knew how to work and always did so with joy and determination. Under the shell of the talented
+                                    body was <strong>Viola</strong>, the body of wisdom. Viola knew a lot about the world and learned very quickly. She was always full of brilliant ideas and had clever solutions for every problem. The last
+                                    body, the innermost and smallest of all, was <strong>Mary</strong>, the embodiment of love. Mary had a compassionate heart and was very helpful. She had the special ability to dry tears and mend broken
+                                    hearts.
+                                </p>
+                                <p>One day Babushka decides she wants to find out the meaning of life, so she sends her bodies out of the forest and into the world to search for answers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <section class="padd8 second-sec reviews">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="center green">Please leave a review of my book on our Facebook Page</h2>
+                                <p><strong>Post on our facebook page's feed from here: </strong></p>
+                                <p>
+                                    <form action="{% url 'about' %}" method="post" class="wpcf7-form" novalidate="novalidate">
+                                        {% csrf_token %}
+                                        <div class="col-12">
+                                            <span class="wpcf7-form-control-wrap your-message">
+                                                <textarea name="content" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Please enter the message..."></textarea> 
+                                            </span>
+                                            <br>
+                                            <input type="submit" value="Post Message" class="wpcf7-form-control wpcf7-submit">
+                                        </div>
+                                    </form>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <section class="padd8 third-sec">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="center green">The Author</h2>
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/author_image_new.png" class="rounded mx-auto d-block padd4" alt="author" /></noscript>
+                                <img
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/author_image_new.png"
+                                    class="lazyload rounded mx-auto d-block padd4"
+                                    alt="author"
+                                />
+                                <p>
+                                    Since quitting her full-time job at a branding communication agency in Zurich, Catherine has gone on to become a successful freelance designer and a children’s author. She lives on the small island of
+                                    Madeira with her family, spending her time growing vegetables in her garden and working for clients around the world.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="bg-pl">
+                <noscript><img class="left-img" src="http://babushkastory.herokuapp.com/static/img/plants_left_01.svg" alt="" /></noscript>
+                <img
+                    class="lazyload left-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                    data-src="http://babushkastory.herokuapp.com/static/img/plants_left_01.svg"
+                    alt=""
+                />
+                <noscript><img class="center-img" src="http://babushkastory.herokuapp.com/static/img/plants_center_01.svg" alt="" /></noscript>
+                <img
+                    class="lazyload center-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                    data-src="http://babushkastory.herokuapp.com/static/img/plants_center_01.svg"
+                    alt=""
+                />
+                <noscript><img class="right-img" src="http://babushkastory.herokuapp.com/static/img/plants_right_01.svg" alt="" /></noscript>
+                <img
+                    class="lazyload right-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                    data-src="http://babushkastory.herokuapp.com/static/img/plants_right_01.svg"
+                    alt=""
+                />
+            </div>
+        </div>
+        <!-- Footer start -->
+            {% include 'footer.html' %}
+            {% block content-footer %}
+            {% endblock %}
+        <!-- Footer end -->
+    </body>
+</html>
+

@@ -1,0 +1,29 @@
+{% load static %}
+{% block content-head %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://use.typekit.net/hnw3dmz.css" />
+        <meta name="theme-color" content="#D5E0EB" />
+        <link media="all" href="{% static 'style-lib.css'%}" rel="stylesheet" type="text/css" />
+        <link media="only screen and (max-width: 768px)" type="text/css"  href="{% static 'style-small.css'%}" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link media="all" rel="stylesheet" type="text/css"  href="{% static 'style.css'%}">
+        <script src="https://kit.fontawesome.com/6e5b3ae10f.js" crossorigin="anonymous"></script>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("centered_nav");
+                var f = document.getElementById("section");
+                var l = document.getElementById("mainlogo");
+                var i = document.getElementById("footerillus");
+                if (x.className === "rc_nav") {
+                    x.className += " responsive";
+                    f.style.display = "none";
+                    i.style.display = "none";
+                } else {
+                    x.className = "rc_nav";
+                    f.style.display = "block";
+                    i.style.display = "block";
+                }
+            }
+        </script>
+{% endblock %}      

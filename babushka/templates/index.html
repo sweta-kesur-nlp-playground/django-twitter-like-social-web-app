@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Babushka - The Story of Babushka </title>
+        <!-- stylesheet and meta tag start -->
+        {% include 'head.html' %}
+        {% block content-head %}
+        {% endblock %}
+        <!-- stylesheet and meta tag end -->
+    </head>
+    <body class="page-template page-template-page-char page-template-page-char-php page page-id-11 custom-background theme-babushka woocommerce-no-js elementor-default">
+        <div class="contentwrapper">
+            <!-- Header start -->
+                {% include 'header.html' %}
+                {% block content-header %}
+                {% endblock %}
+            <!-- Header end -->
+            
+            <div id="section">
+                <!-- Antonia section start -->
+                <section class="antonia b2 padd4" id="first-sec">
+                    <div class="container" id="mainlogo">
+                        <div class="mainlogoblack">
+                            <a href="#">
+                                <noscript><img src="{% static 'img/Logo_black.svg'%}" alt="Logo" /></noscript>
+                                <img
+                                    class="lazyload"
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="{% static 'img/Logo_black.svg'%}"
+                                    alt="Logo"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container full-height" id="antonia">
+                        <div class="row">
+                            <div class="col-md-6 p2">
+                                <h2 class="mobiletitle pink-color">Antonia</h2>
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/antonia.svg" class="img-fluid" alt="Antonio image" /></noscript>
+                                <img
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/antonia.svg"
+                                    class="lazyload img-fluid"
+                                    alt="Antonio image"
+                                />
+                                <hr id="first-end" />
+                            </div>
+                            <div class="col-md-6">
+                                <div class="vcenter">
+                                    <h2 class="nomobile pink-color">Antonia</h2>
+                                    <p>There was the outermost body, Antonia. She was pure beauty and everyone who saw her raved about her good looks.</p>
+                                    <p class="audio-file">
+                                        <noscript><img class="play btn-ctl" alt="play btn" onclick="playAudio()" src="http://babushkastory.herokuapp.com/static/img/play.svg" /></noscript>
+                                        <img
+                                            class="lazyload play btn-ctl"
+                                            id="play1"
+                                            alt="play btn"
+                                            onclick="playAudio()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/play.svg"
+                                        />
+                                        <noscript><img class="pause btn-ctl" alt="pause btn" onclick="pauseAudio()" src="http://babushkastory.herokuapp.com/static/img/pause.svg" /></noscript>
+                                        <img
+                                            class="lazyload pause btn-ctl"
+                                            id="pause1"
+                                            alt="pause btn"
+                                            onclick="pauseAudio()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/pause.svg"
+                                        />
+                                        <audio id="sound1" src="http://babushkastory.herokuapp.com/static/img/Antonia.mp3"></audio>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Antonia section end -->
+                <!-- loretta section start -->
+                <section class="loretta b2 align-right" id="loretta">
+                    <div class="container full-height">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="vcenter">
+                                    <h2 class="nomobile mobile-view green-color ipad-view">Loretta</h2>
+                                    <noscript><img src="http://babushkastory.herokuapp.com/static/img/loretta.svg" class="img-fluid ipad-view" alt="Loretta image" /></noscript>
+                                    <img
+                                        src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                        data-src="http://babushkastory.herokuapp.com/static/img/loretta.svg"
+                                        class="lazyload img-fluid ipad-view"
+                                        alt="Loretta image"
+                                    />
+                                    <p>
+                                        Beneath that body of beauty hid the second body, Loretta, the body of wealth. She wore gold ornaments, and her robe was decorated with many different gems that glittered like the ocean on a sunny day.
+                                    </p>
+                                    <p class="audio-file">
+                                        <audio id="sound2" src="http://babushkastory.herokuapp.com/static/img/Loretta.mp3"></audio>
+                                        <noscript><img class="play btn-ctl" alt="play btn" onclick="playAudio2()" src="http://babushkastory.herokuapp.com/static/img/play_loretta.svg" /></noscript>
+                                        <img
+                                            class="lazyload play btn-ctl"
+                                            id="play2"
+                                            alt="play btn"
+                                            onclick="playAudio2()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/play_loretta.svg"
+                                        />
+                                        <noscript><img class="pause btn-ctl" alt="pause btn" onclick="pauseAudio2()" src="http://babushkastory.herokuapp.com/static/img/pause_loretta.svg" /></noscript>
+                                        <img
+                                            class="lazyload pause btn-ctl"
+                                            id="pause2"
+                                            alt="pause btn"
+                                            onclick="pauseAudio2()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/pause_loretta.svg"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p2 left desktop-view">
+                                <h2 class="mobiletitle green-color">Loretta</h2>
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/loretta.svg" class="img-fluid" alt="Loretta image" /></noscript>
+                                <img
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/loretta.svg"
+                                    class="lazyload img-fluid"
+                                    alt="Loretta image"
+                                />
+                            </div>
+                            <hr id="second-end" />
+                        </div>
+                    </div>
+                </section>
+                <!-- loretta section start -->
+                <!-- loretta section start -->
+                <section class="paula b2" id="paula">
+                    <div class="container full-height">
+                        <div class="row">
+                            <div class="col-md-6 p2 left">
+                                <h2 class="mobiletitle pink-color">Paula</h2>
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/paula.svg" alt="Paula" class="img-fluid" /></noscript>
+                                <img
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/paula.svg"
+                                    alt="Paula"
+                                    class="lazyload img-fluid"
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <div class="vcenter">
+                                    <h2 class="nomobile blue-color">Paula</h2>
+                                    <p>Hidden within the rich body was Paula, the body that held all the talents. Whatever Paula did, she was sure to succeed. She knew how to work and always did so with joy and determination.</p>
+                                    <p class="audio-file">
+                                        <audio id="sound3" src="http://babushkastory.herokuapp.com/static/img/Paula.mp3"></audio>
+                                        <noscript><img class="play btn-ctl" alt="play btn" onclick="playAudio3()" src="http://babushkastory.herokuapp.com/static/img/play_paula.svg" /></noscript>
+                                        <img
+                                            class="lazyload play btn-ctl"
+                                            id="play3"
+                                            alt="play btn"
+                                            onclick="playAudio3()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/play_paula.svg"
+                                        />
+                                        <noscript><img class="pause btn-ctl" alt="pause btn" onclick="pauseAudio3()" src="http://babushkastory.herokuapp.com/static/img/pause_paula.svg" /></noscript>
+                                        <img
+                                            class="lazyload pause btn-ctl"
+                                            id="pause3"
+                                            alt="pause btn"
+                                            onclick="pauseAudio3()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/pause_paula.svg"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr id="third-end" />
+                </section>
+                <!-- loretta section end -->
+                <!-- viola section start -->
+                <section class="viola b2 align-right" id="viola">
+                    <div class="container full-height">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="vcenter">
+                                    <h2 class="nomobile orange-color ipad-view mobile-view">Viola</h2>
+                                    <noscript><img src="http://babushkastory.herokuapp.com/static/img/viola.svg" class="img-fluid ipad-view" alt="Viola image" /></noscript>
+                                    <img
+                                        src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                        data-src="http://babushkastory.herokuapp.com/static/img/viola.svg"
+                                        class="lazyload img-fluid ipad-view"
+                                        alt="Viola image"
+                                    />
+                                    <p>
+                                        Under the shell of the talented body was Viola, the body of wisdom. Viola knew a lot about the world and learned very quickly. She was always full of brilliant ideas and had clever solutions for every
+                                        problem.
+                                    </p>
+                                    <p class="audio-file">
+                                        <audio id="sound4" src="http://babushkastory.herokuapp.com/static/img/Viola.mp3"></audio>
+                                        <noscript><img class="play btn-ctl" alt="play btn" onclick="playAudio4()" src="http://babushkastory.herokuapp.com/static/img/play_viola.svg" /></noscript>
+                                        <img
+                                            class="lazyload play btn-ctl"
+                                            id="play4"
+                                            alt="play btn"
+                                            onclick="playAudio4()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/play_viola.svg"
+                                        />
+                                        <noscript><img class="pause btn-ctl" alt="pause btn" onclick="pauseAudio4()" src="http://babushkastory.herokuapp.com/static/img/pause_vila.svg" /></noscript>
+                                        <img
+                                            class="lazyload pause btn-ctl"
+                                            id="pause4"
+                                            alt="pause btn"
+                                            onclick="pauseAudio4()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/pause_vila.svg"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p2 left desktop-view">
+                                <h2 class="mobiletitle orange-color">Viola</h2>
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/viola.svg" class="img-fluid" alt="Viola" /></noscript>
+                                <img
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/viola.svg"
+                                    class="lazyload img-fluid"
+                                    alt="Viola"
+                                />
+                            </div>
+                            <hr id="forth-end" />
+                        </div>
+                    </div>
+                </section>
+                <!-- viola section end -->
+                <!-- maria section start -->
+                <section class="maria b2" id="maria">
+                    <div class="container full-height">
+                        <div class="row">
+                            <div class="col-md-6 p2 left">
+                                <h2 class="mobiletitle red-color">Mary</h2>
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/mary.svg" class="img-fluid" alt="Maria image" /></noscript>
+                                <img
+                                    src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                    data-src="http://babushkastory.herokuapp.com/static/img/mary.svg"
+                                    class="lazyload img-fluid"
+                                    alt="Maria image"
+                                />
+                                <hr id="fifth-end" />
+                            </div>
+                            <div class="col-md-6">
+                                <div class="vcenter">
+                                    <h2 class="nomobile red-color">Mary</h2>
+                                    <p>
+                                        The last body, the innermost and smallest of all, was Mary, the embodiment of love. Mary had a compassionate heart and was very helpful. She had the special ability to dry tears and mend broken
+                                        hearts. All these bodies together formed the complete Babushka.
+                                    </p>
+                                    <p class="audio-file">
+                                        <audio id="sound5" src="http://babushkastory.herokuapp.com/static/img/Mary.mp3"></audio>
+                                        <noscript><img class="play btn-ctl" alt="play btn" onclick="playAudio5()" src="http://babushkastory.herokuapp.com/static/img/play_mary.svg" /></noscript>
+                                        <img
+                                            class="lazyload play btn-ctl"
+                                            alt="play btn"
+                                            id="play5"
+                                            onclick="playAudio5()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/play_mary.svg"
+                                        />
+                                        <noscript><img class="pause btn-ctl" alt="pause btn" onclick="pauseAudio5()" src="http://babushkastory.herokuapp.com/static/img/pause_mary.svg" /></noscript>
+                                        <img
+                                            class="lazyload pause btn-ctl"
+                                            alt="pause btn"
+                                            id="pause5"
+                                            onclick="pauseAudio5()"
+                                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                            data-src="http://babushkastory.herokuapp.com/static/img/pause_mary.svg"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- maria section end -->
+            </div>
+        </div>
+        <!-- Footer start -->
+            {% include 'footer.html' %}
+            {% block content-footer %}
+            {% endblock %}
+        <!-- Footer end -->
+    </body>
+</html>

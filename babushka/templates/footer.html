@@ -1,0 +1,37 @@
+{% load static %}
+{% block content-footer %}
+	<div class="footer footer-common">
+            <ul class="footerwrapper">
+                <li class="icon">
+                    <span class="icones">
+                        <a href="https://www.facebook.com/Babushka-Story-106038245235948">
+                            <noscript><img src="{% static 'img/facebook.svg' %}" alt="FB logo" /></noscript>
+                            <img
+                                class="lazyload"
+                                src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
+                                data-src="http://babushkastory.herokuapp.com/static/img/facebook.svg"
+                                alt="FB logo"
+                            />
+                        </a>
+                    </span>
+                </li>
+                <li class="center">&copy; The Story of Babushka, 2020</li>
+            </ul>
+        </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        <noscript>
+            <style>
+                .lazyload {
+                    display: none;
+                }
+            </style>
+        </noscript>
+        <script data-noptimize="1">
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.loadMode = 1;
+        </script>
+        <script async data-noptimize="1" src="{% static 'lazysizes.js'%}"></script>
+        <script defer src="{% static 'autoptimize.js'%}"></script>
+        <script type="text/javascript" src="{% static 'site.js'%}"></script> 
+        <!--noptimize--><!-- Autoptimize found a problem with the HTML in your Theme, tag `/body` missing --><!--/noptimize-->
+{% endblock %}
