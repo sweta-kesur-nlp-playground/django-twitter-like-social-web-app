@@ -27,7 +27,7 @@ def register(request):
     if request.method == 'POST' :
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
-        username = request.POST['username']
+        username = request.POST['username1']
         password = request.POST['password']
         password2 = request.POST['password2']
         email = request.POST['email']
