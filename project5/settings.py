@@ -9,11 +9,18 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+    # Add to this list all the locations containing your static files 
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]','babushkahistory.herokuapp.com']
 
+# Facebook credentials
+
+ACCESS_TOKEN = 'EAAIiAV3U0vEBAPX7Nuon4A6ZCpPDABpbAwhZClHMmtCWrHRJU8v3oZBMOEn4vgHt1wCjHMYZCIF5RxoPRAkzw80c1CkpSB0QnqGuqLw9ZBN0asew6NCaYg2AnjJqtDuiqN3qLgdG2lZCZC5jz6ABQYkiycBHvK87ZBiEr4vkDxJvJd8V7ufLFgyE'
 
 # Application definition
 
