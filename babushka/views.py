@@ -26,6 +26,7 @@ class UserView(View):
 	def post(self, request, *args, **kwargs):
 	    if request.is_ajax():
 	        form = self.form_class(request.POST)
+	        form.save()
 	        if form.is_valid():
 	            form.save()
 	            return JsonResponse({"message": "success"})
