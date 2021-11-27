@@ -24,44 +24,34 @@ class CommentView(View):
 
 def register(request):
 
-    if request.method == 'POST' :
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        username1 = request.POST['username1']
-        password = request.POST['password']
-        password2 = request.POST['password2']
-        email = request.POST['email']
-        gender = request.POST['gender']
+	if request.method == 'POST':
+		first_name = request.POST['first_name'],
+		last_name = request.POST['last_name'],
+		username1 = request.POST['username1'],
+		password = request.POST['password'],
+		password2 = request.POST['password2'],
+		email = request.POST['email'],
+		gender = request.POST['gender'],
+		user1 = CustomUser(
+	        first_name = first_name,
+	        last_name = last_name,
+	        username1 = username1,
+	        username = username1,
+	        password = password,
+	        email = email,
+	        gender = gender)
+		user1.save()
+		return redirect('home')
+	return render(request, 'register.html', {})
 
-        if password == password2: 
-            
-            if CustomUser.objects.filter(username1=username1).exists():
-                messages.info(request, 'username taken')
-                return redirect('home')
-
-            elif CustomUser.objects.filter(email=email).exists():
-                messages.info(request, 'Email taken')
-                return redirect('home')
-
-            else:
-                user = CustomUser.objects.create_user(username1=username1, password=password, email=email, first_name=first_name, last_name=last_name, gender=gender)
-                user.save()
-                print(request, 'user created')
-
-        else:
-            messages.info(request, 'Password not matching...')
-            return redirect('home')
-
-        return redirect('home')
-
-    else:
-        return render(request, 'register.html', {})
+    
 
 # class UserView(View):
 # 	form_class = CustomUserCreationForm
 # 	def post(self, request, *args, **kwargs):
 # 	    if request.is_ajax():
 # 	        form = self.form_class(request.POST)
+# 	        form.save()
 # 	        if form.is_valid():
 # 	            form.save()
 # 	            return JsonResponse({"message": "success"})
@@ -122,8 +112,8 @@ def about(request):
 def blog(request):
 	return render(request, 'blog.html', {});
 
-def register(request):
-	return render(request, 'register.html', {});
+# def register(request):
+# 	return render(request, 'register.html', {});
 
 def contact(request):
 	return render(request, 'contact.html', {});

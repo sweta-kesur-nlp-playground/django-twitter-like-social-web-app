@@ -11,7 +11,6 @@ class CustomUser(AbstractUser):
 	gender = models.CharField(max_length=100)
 	is_author = models.BooleanField(default=True)
 	is_reader = models.BooleanField(default=False)
-	gender = models.CharField(max_length=100)
 	
 class Comment(models.Model):
 
