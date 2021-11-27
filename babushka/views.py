@@ -25,14 +25,14 @@ class CommentView(View):
 def register(request):
 
 	if request.method == 'POST':
-		first_name = request.POST['first_name'],
-		last_name = request.POST['last_name'],
-		username1 = request.POST['username1'],
-		password = request.POST['password'],
-		password2 = request.POST['password2'],
-		email = request.POST['email'],
-		gender = request.POST['gender'],
-		user1 = CustomUser(
+		first_name = request.POST['first_name']
+		last_name = request.POST['last_name']
+		username1 = request.POST['username1']
+		password = request.POST['password']
+		password2 = request.POST['password2']
+		email = request.POST['email']
+		gender = request.POST['gender']
+		user1 = CustomUser.objects.create(
 	        first_name = first_name,
 	        last_name = last_name,
 	        username1 = username1,
@@ -41,7 +41,8 @@ def register(request):
 	        email = email,
 	        gender = gender)
 		user1.save()
-		return redirect('home')
+		return JsonResponse({"message": "success"})
+
 	return render(request, 'register.html', {})
 
     

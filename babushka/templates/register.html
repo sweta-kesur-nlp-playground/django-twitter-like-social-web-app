@@ -214,53 +214,53 @@
                 // return false;
             });
             // Register Form
-            // $("#registerform").on("submit", function(e){
-            //     e.preventDefault();
-            //     e.stopPropagation();
-            //     var $this = $(this);
-            //     var valid = true;
-            //     $('#registerform input').each(function() {
-            //         let $this = $(this);
+            $("#registerform").on("submit", function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                var $this = $(this);
+                var valid = true;
+                $('#registerform input').each(function() {
+                    let $this = $(this);
                     
-            //         if(!$this.val()) {
-            //             valid = false;
-            //             // alert("empty values");
-            //             $this.parents('.validate-required').find('.register-form-text-message').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
-            //             $this.parents('.validate-required').find('.register-form-text-message').css({'color':'#a00'});
-            //             $this.parents('.validate-required').find('input').css({'border-color': '#a00'});
-            //             $this.parents('.validate-required').find('label').css({'color': '#a00'});
-            //             $(this).parents('.validate-required').find('.register-form-text-message').css({'display': 'block'});
-            //             $this.parents('.validate-required').find('input').click(function(){
-            //                 $(this).css({'border-color': '#6dc22e'});
-            //                 $(this).parents('.validate-required').find('label').css({'color': 'black'});
-            //                 $(this).parents('.validate-required').find('.register-form-text-message').css({'display': 'none'});
-            //             });
-            //         }
-            //     });
-            //     if(valid){
-            //         let data = $this.serialize();
-            //         $.ajax({
-            //             url: $this.attr("action"),
-            //             type: "POST",
-            //             data: data,
-            //             dataType: "json",
-            //             success: function(resp){
-            //                 if(resp.message == "success"){
-            //                     // alert("Saved successful");
-            //                     $("#registerform")[0].reset();
-            //                     $(".form-message").append("Registration completed successfully");
-            //                 }
-            //                 else{
-            //                     alert(resp.message);
-            //                 }
-            //             },
-            //             error: function(resp){
-            //                 $(".register-form-message").append("Couldn't save data. Something went wrong");
-            //             }
-            //         });
-            //     }
-            //     return false;
-            // });
+                    if(!$this.val()) {
+                        valid = false;
+                        // alert("empty values");
+                        $this.parents('.validate-required').find('.register-form-text-message').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
+                        $this.parents('.validate-required').find('.register-form-text-message').css({'color':'#a00'});
+                        $this.parents('.validate-required').find('input').css({'border-color': '#a00'});
+                        $this.parents('.validate-required').find('label').css({'color': '#a00'});
+                        $(this).parents('.validate-required').find('.register-form-text-message').css({'display': 'block'});
+                        $this.parents('.validate-required').find('input').click(function(){
+                            $(this).css({'border-color': '#6dc22e'});
+                            $(this).parents('.validate-required').find('label').css({'color': 'black'});
+                            $(this).parents('.validate-required').find('.register-form-text-message').css({'display': 'none'});
+                        });
+                    }
+                });
+                if(valid){
+                    let data = $this.serialize();
+                    $.ajax({
+                        url: $this.attr("action"),
+                        type: "POST",
+                        data: data,
+                        dataType: "json",
+                        success: function(resp){
+                            if(resp.message == "success"){
+                                // alert("Saved successful");
+                                $("#registerform")[0].reset();
+                                $(".register-form-message").append("Registration completed successfully");
+                            }
+                            else{
+                                alert(resp.message);
+                            }
+                        },
+                        error: function(resp){
+                            $(".register-form-message").append("Couldn't save data. Something went wrong");
+                        }
+                    });
+                }
+                return false;
+            });
         </script>
     </body>
 </html>
