@@ -62,6 +62,9 @@ def signin(request):
     context = {}
     return render(request, 'register.html', context)
 
+def signout(request):
+    auth.logout(request)
+    return redirect('home')
 
 # class UserView(View):
 # 	form_class = CustomUserCreationForm
