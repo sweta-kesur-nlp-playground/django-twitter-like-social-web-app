@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import Comment, Message, BookUser, CustomUser
+from .models import Comment, Message, BookUser, CustomUser, Post, Profile
 from .forms import CustomUserCreationForm
 from django.contrib.auth.admin import UserAdmin
 
@@ -35,5 +35,8 @@ admin.site.register(Comment, CommentAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(BookUser)
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Post)
+admin.site.register(Profile)
+
 admin.site.unregister(Group)
 
