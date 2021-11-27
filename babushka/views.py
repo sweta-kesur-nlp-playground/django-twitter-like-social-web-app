@@ -45,7 +45,23 @@ def register(request):
 
 	return render(request, 'register.html', {})
 
-    
+def signin(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username,password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('home')
+        else:
+            messages.info(request, 'invalid credentials')
+            return redirect('signin')
+
+    context = {}
+    return render(request, 'register.html', context)
+
 
 # class UserView(View):
 # 	form_class = CustomUserCreationForm
