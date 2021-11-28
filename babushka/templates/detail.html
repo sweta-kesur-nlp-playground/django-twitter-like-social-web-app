@@ -5,5 +5,60 @@ profiles detail
 {% endblock title %}
 
 {% block content %}
-  {{object}}
+
+<!-- modal -->
+<div class="ui basic modal">
+  <div class="ui icon header">
+    <i class="user plus icon"></i>
+    Are you sure you want to follow {{object}} ?
+  </div>
+  <div class="content">
+    <p>By clicking yes you will see all the posts published by {{object}}</p>
+  </div>
+  <div class="actions">
+    <form action="{% url 'follow-unfollow-view' %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="profile_pk" value="{{object.pk}}">
+      <button class="ui green ok massive button">
+        <i class="checkmark icon"></i>
+        Yes
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="row">
+      <div class="four wide column">
+        {{object}}
+        <hr>
+        {% if follow %}
+          <form action="{% url 'follow-unfollow-view' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="profile_pk" value="{{object.pk}}">
+            <button type="submit" class="ui negative button">unfollow</button>
+          </form>
+        {% else %}
+          <button id="follow-btn" class="ui positive button">follow</button>
+        {% endif %}
+      </div>
+      <div class="four wide column">
+        {% for post in obect.profiles_posts %}
+          <div class="ui segment">
+            {{post.body}}
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
 {% endblock content %}
+
+{% block scripts %}
+<script>
+  $(document).ready(function(){
+    $('#follow-btn').click(function(){
+      $('.ui.basic.modal').modal('show');
+    });
+  })
+</script>
+{% endblock scripts %}
