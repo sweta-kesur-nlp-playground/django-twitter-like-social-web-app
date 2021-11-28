@@ -8,6 +8,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.models import auth
 from django.views.generic import ListView, DetailView
+from itertools import chain
 
 import facebook
 
@@ -25,7 +26,25 @@ def follow_unfollow_profile(request):
 	return redirect('profile-list-view')
 
 def posts_of_following_profiles(request):
-	return render(request, 'post.html', {})
+	# get logged in user profile
+	profile = Profile.objects.get(user=request.user)
+	# check who we are following
+	users = [user for user in profile.following.all()]
+	# initial values for variables
+	posts = []
+	qs = None
+	# get the posts of people who we are following
+	for u in users:
+		p = Profile.objects.get(user=u)
+		p_posts = p.post_set.all()
+		posts.append(p_posts)
+	# our posts
+	my_posts = profile.profiles_post()
+	posts.append(my_posts)
+	# sort and chain querysets and unpack the posts list
+	if len(posts)>0:
+		qs = sorted(chain(*posts), reverse=True, key=lambda obj: obj.created)
+	return render(request, 'post.html', {'profile':profile, 'posts':qs})
 
 class CommentView(View):
 	form_class = CommentForm
