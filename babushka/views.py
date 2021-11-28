@@ -24,6 +24,9 @@ def follow_unfollow_profile(request):
 		return redirect(request.META.get('HTTP_REFERER'))
 	return redirect('profile-list-view')
 
+def posts_of_following_profiles(request):
+	return render(request, 'post.html', {})
+
 class CommentView(View):
 	form_class = CommentForm
 	def post(self, request, *args, **kwargs):
