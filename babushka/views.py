@@ -1,12 +1,14 @@
 from django.conf import settings
 from django.shortcuts import render, redirect
-from .models import Comment, Message, BookUser, CustomUser
+from .models import Comment, Message, BookUser, CustomUser, Profile
 from .forms import CommentForm, MessageForm, RegisterForm, CustomUserCreationForm
 from django.template import RequestContext
 from django.views import View
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.models import auth
+from django.views.generic import ListView, DetailView
+
 import facebook
 
 class CommentView(View):
@@ -143,3 +145,15 @@ def handler404(request, exception=None):
 
 def handler500(request, exception=None):
     return render(request, '500.html', status=500)
+
+class ProfileListView(ListView):
+	model = Profile
+	template_name = 'main.html'
+	context_object_name = 'profiles'	#object_list as default
+
+	def get_queryset(self):
+		return Profile.objects.all().exclude(user=self.request.user)
+
+
+
+

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+profiles to follow
+{% endblock title %}
+
+{% block content %}
+  {% for profile in profiles %}
+    {{profile}}
+  {% endfor %}
+{% endblock content %}
