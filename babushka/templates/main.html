@@ -6,6 +6,12 @@ profiles to follow
 
 {% block content %}
   {% for profile in profiles %}
-    {{profile}}
+    <div class="ui segment">
+      {{profile}}
+      <br>
+      <a href="{% url 'profile-detail-view' profile.pk %}">      
+        <button class="ui primary button">See profile</button>
+      </a>
+    </div>
   {% endfor %}
 {% endblock content %}

@@ -154,6 +154,8 @@ class ProfileListView(ListView):
 	def get_queryset(self):
 		return Profile.objects.all().exclude(user=self.request.user)
 
-
+class ProfileDetailView(DetailView):
+	model = Profile
+	template_name = 'detail.html'
 
 
