@@ -32,7 +32,7 @@
                     <div id="primary" class="site-main">
                         <article id="post-45" class="post-45 page type-page status-publish hentry">
                             <header class="entry-header">
-                                <h1 class="entry-title">User Profiles to Follow</h1>
+                                <h1 class="entry-title">List of User Profiles</h1>
                             </header>
                             <!-- .entry-header -->
 
@@ -41,7 +41,7 @@
                                 <div class="woocommerce">
                                     <div class="woocommerce-notices-wrapper"></div>
                                     <code>
-                                      <h2>Users to follow </h2>
+                                      <h2>List of Users </h2>
                                         <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
                                           <thead>
                                               <tr>
@@ -61,7 +61,7 @@
                                                       {{forloop.counter}}
                                                   </td>
 
-                                                  <td class="product-name" data-title="Username">
+                                                  <td class="username" data-title="Username">
                                                       <a href="{% url 'profile-detail-view' profile.pk %}">{{profile.user.username}}</a>
                                                   </td>
 
@@ -88,7 +88,6 @@
                                                   </td>
                                                 </tr>
                                               {% endfor %}
-                                              
                                           </tbody>
                                       </table>
                                     </code>
