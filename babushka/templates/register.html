@@ -248,14 +248,14 @@
                             if(resp.message == "success"){
                                 // alert("Saved successful");
                                 $("#registerform")[0].reset();
-                                $(".register-form-message").append("Registration completed successfully");
+                                $(".register-form-message").text("Registration completed successfully");
                             }
                             else{
                                 alert(resp.message);
                             }
                         },
                         error: function(resp){
-                            $(".register-form-message").append("Couldn't save data. Something went wrong");
+                            $(".register-form-message").text("Couldn't save data. Something went wrong");
                         }
                     });
                 }

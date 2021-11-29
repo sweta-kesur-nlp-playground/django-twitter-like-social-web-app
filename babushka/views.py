@@ -9,6 +9,7 @@ from django.core import serializers
 from django.contrib.auth.models import auth
 from django.views.generic import ListView, DetailView
 from itertools import chain
+from django.contrib import messages
 
 import facebook
 
@@ -69,7 +70,7 @@ def register(request):
 		password2 = request.POST['password2']
 		email = request.POST['email']
 		gender = request.POST['gender']
-		user1 = CustomUser.objects.create(
+		user1 = CustomUser.objects.create_user(
 	        first_name = first_name,
 	        last_name = last_name,
 	        username1 = username1,
@@ -103,19 +104,6 @@ def signout(request):
     auth.logout(request)
     return redirect('home')
 
-# class UserView(View):
-# 	form_class = CustomUserCreationForm
-# 	def post(self, request, *args, **kwargs):
-# 	    if request.is_ajax():
-# 	        form = self.form_class(request.POST)
-# 	        form.save()
-# 	        if form.is_valid():
-# 	            form.save()
-# 	            return JsonResponse({"message": "success"})
-# 	        return JsonResponse({"message": "Validation failed"})
-# 	    return JsonResponse({"message": "Wrong request"})
-# 	def get(self,request, *args, **kwargs):
-# 	    return render(request, "register.html", {})
 
 class CommentListView(View):
 	
