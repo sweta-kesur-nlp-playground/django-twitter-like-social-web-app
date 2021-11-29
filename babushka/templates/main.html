@@ -46,7 +46,11 @@
                                           <thead>
                                               <tr>
                                                   <th class="product-number">#</th>
-                                                  <th class="product-name">User Profile</th>
+                                                  <th class="product-name">Username</th>
+                                                  <th class="product-name">First Name</th>
+                                                  <th class="product-name">Last Name</th>
+                                                  <th class="product-name">Contact Email</th>
+                                                  <th class="product-name">Gender</th>
                                                   <th class="product-price">&nbsp;&nbsp;Profile Link</th>
                                               </tr>
                                           </thead>
@@ -57,8 +61,24 @@
                                                       {{forloop.counter}}
                                                   </td>
 
-                                                  <td class="product-name" data-title="User Profile">
-                                                      Username: <a href="{% url 'profile-detail-view' profile.pk %}">{{profile}}</a>
+                                                  <td class="product-name" data-title="Username">
+                                                      <a href="{% url 'profile-detail-view' profile.pk %}">{{profile.user.username}}</a>
+                                                  </td>
+
+                                                  <td class="product-name" data-title="First Name">
+                                                      {{profile.user.first_name}}
+                                                  </td>
+
+                                                  <td class="product-name" data-title="Last Name">
+                                                      {{profile.user.last_name}}
+                                                  </td>
+
+                                                  <td class="product-name" data-title="Contact Email">
+                                                      {{profile.user.email}}
+                                                  </td>
+
+                                                  <td class="product-name" data-title="Gender">
+                                                      {{profile.user.gender}}
                                                   </td>
 
                                                   <td class="product-price" data-title="Profile Link">

@@ -44,7 +44,7 @@ class Profile(models.Model):
 		return self.post_set.all()
 
 	def __str__(self):
-		return str(self.user.username)
+		return str(self.user)
 
 	class Meta:
 		ordering = ('-created',)
