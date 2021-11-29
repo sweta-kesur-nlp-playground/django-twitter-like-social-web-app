@@ -10,6 +10,18 @@ class CustomUserAdmin(UserAdmin):
 	model = CustomUser
 	add_form = CustomUserCreationForm
 
+	fieldsets = (
+		*UserAdmin.fieldsets,
+		(
+			'Gender',
+			{
+				'fields': (
+					'gender',
+				)
+			}
+		)
+	)
+
 class CommentAdmin(admin.ModelAdmin):
 	list_display = ('name', 'email')
 	list_filter = ('name',)
