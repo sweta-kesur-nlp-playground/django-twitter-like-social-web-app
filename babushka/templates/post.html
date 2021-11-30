@@ -1,38 +1,156 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>About - The Story of Babushka </title>
+        <!-- stylesheet and meta tag start -->
+        {% include 'head.html' %}
+        {% block content-head %}
+        {% endblock %}
+        <!-- stylesheet and meta tag end -->
+    </head>
+    <body class="page-template-default page page-id-552 custom-background theme-babushka woocommerce-checkout woocommerce-page woocommerce-js elementor-default product-template-default single single-product postid-32 custom-background theme-babushka woocommerce woocommerce-page woocommerce-no-js elementor-default">
+        <div class="contentwrapper">
+            <!-- Header start -->
+                {% include 'header.html' %}
+                {% block content-header %}
+                {% endblock %}
+            <!-- Header end -->
 
-{% block title %}
-main post
-{% endblock title %}
+            <div id="section" class="">
+                <section>
+                    <div class="container">
+                        <!-- Logo image start -->
+                        <div class="mainlogoblack" id="mainlogo">
+                            <a href="{% url 'home' %}">
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></noscript><img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E'
+                                data-src="http://babushkastory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></a>
+                        </div>
+                        <!-- Logo image end -->
+                    </div>
+                    <div class="container">
+                        <div id="primary" class="site-main aa">
+                            <article id="post-32" class="post-32 product type-product status-publish has-post-thumbnail product_cat-digital-ebook product_cat-outsource first instock shipping-taxable purchasable product-type-simple">
+                                <div class="row">
+                                    <div class="col-md-12 text-center feutered-img">
+                                        <div class="post-thumbnail"></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="entry-content">
+                                            <h1>Home Page</h1>
+                                            <div class="woocommerce">
+                                                <div class="single-product" data-product-page-preselected-id="0">
+                                                    <div class="woocommerce-notices-wrapper"></div>
+                                                    <div
+                                                        id="product-32"
+                                                        class="row product type-product post-32 status-publish instock product_cat-digital-ebook product_cat-outsource has-post-thumbnail shipping-taxable purchasable product-type-simple"
+                                                    >
+                                                        <div
+                                                            class="col-sm-4 woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images"
+                                                            data-columns="4"
+                                                        >
 
-{% block content %}
-<div class="ui grid">
-  <div class="row">
-    <div class="four wide column">
-      {{profile}}
-      <br><br>
-      <a href="{% url 'profile-list-view' %}">
-        <button class="ui primary button">People to follow</button>
-      </a>
-      <br><br>
-      Following:
-      <ul>
-        {% for p in profile.following.all %}
-          <li>{{p}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="twelve wide column">
-      Posts:
-      <hr>
-      {% for post in posts %}
-          <div class="ui segment">
-            {{post.author}}
-            <hr>
-            {{post.body}}
-          </div>
-        {% endfor %}
-    </div>
-  </div>
-</div>
+                                                              <div class="cart_totals">
+                                                                  <h2><i class="fas fa-user"></i> My Account</h2>
+                                                                  <table cellspacing="0" class="shop_table shop_table_responsive">
+                                                                  <tbody>
+                                                                      <tr class="profile-username">
+                                                                          <th>Username</th>
+                                                                          <td data-title="Username">
+                                                                              <a href="{% url 'profile-detail-view' profile.pk %}">{{profile.user.username}}</a>
+                                                                          </td>
+                                                                      </tr>
+                                                                  </tbody>
+                                                              </table>
+                                                              </div>
+                                                              <form class="checkout_coupon woocommerce-form-coupon" action="{% url 'profile-list-view' %}" method="GET">
+                                                                <p>To check the list of users to follow, please click this button.</p>
+                                                                <button type="submit" class="ui negative button">User List</button>
+                                                              </form>
+                                                              <table cellspacing="0" class="shop_table shop_table_responsive">
+                                                                  <tbody>
+                                                                      <tr class="profile-username">
+                                                                          <th>Following</th>
+                                                                          <!-- <td data-title="Username">
+                                                                              <a href="{% url 'profile-detail-view' profile.pk %}">{{profile.user.username}}</a>
+                                                                          </td> -->
+                                                                      </tr>
+                                                                      {% for p in profile.following.all %}
+                                                                        <tr><td data-title="Following"><li>{{p}}</li></td></tr>
+                                                                      {% endfor %}
+                                                                  </tbody>
+                                                              </table>
+                                                        </div>
+                                                        <div class="col-sm-8 summary entry-summary test-class">
+                                                          <div class="clear"></div>
+                                                            <div class="woocommerce-notices-wrapper"></div>
+                                                            <form name="checkout" method="post" class="checkout woocommerce-checkout" action="" enctype="multipart/form-data" novalidate="novalidate">
+                                                                <div id="customer_details">
+                                                                  <div>
+                                                                        <div class="woocommerce-shipping-fields"></div>
+                                                                        <div class="woocommerce-additional-fields">
+                                                                            <div class="woocommerce-additional-fields__field-wrapper">
+                                                                                <p class="form-row notes" id="order_comments_field" data-priority="">
+                                                                                    <label for="order_comments" class="">Add a new post</label>
+                                                                                    <span class="woocommerce-input-wrapper">
+                                                                                        <textarea name="order_comments" class="input-text" id="order_comments" placeholder="Write your experience of reading this book..." rows="5" cols="5"></textarea>
+                                                                                    </span>
+                                                                                </p>
+                                                                            </div>
+                                                                            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Add post" data-value="Add Post">Add post</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <br><br>
+                                                          <h1>Activity Log</h1>
+                                                            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                                                              <thead>
+                                                                  <tr>
+                                                                      <th class="product-number">#</th>
+                                                                      <th class="product-name">Author</th>
+                                                                      <th class="product-name">Posts</th>
+                                                                      <th class="product-name">Created on</th>
+                                                                  </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                  {% for post in posts %}
+                                                                    <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                                      <td class="product-number" data-title="Number">
+                                                                          {{forloop.counter}}
+                                                                      </td>
 
-{% endblock content %}
+                                                                      <td class="post" data-title="Post">
+                                                                          {{post.author}}
+                                                                      </td>
+
+                                                                      <td class="post" data-title="Post">
+                                                                          {{post.body}}
+                                                                      </td>
+
+                                                                      <td class="date" data-title="Created on">
+                                                                          {{post.created}}
+                                                                      </td>
+                                                                    </tr>
+                                                                  {% endfor %}
+                                                              </tbody>
+                                                          </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        <!-- Footer start -->
+            {% include 'footer.html' %}
+            {% block content-footer %}
+            {% endblock %}
+        <!-- Footer end -->
+    </body>
+</html>

@@ -92,7 +92,7 @@ def signin(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('home')
+            return redirect('posts-follow-view')
         else:
             messages.info(request, 'invalid credentials')
             return redirect('signin')
