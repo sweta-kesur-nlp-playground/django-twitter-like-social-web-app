@@ -11,6 +11,9 @@
                     <a href="{% url 'blog' %}">Blog</a>
                     <a href="{% url 'contact' %}">Contact</a> 
                     {% if user.is_authenticated %}
+                        {% if user.is_staff %}
+                            <a href="{% url 'admin:index' %}">Admin</a>
+                        {% endif %}
                     <a href="{% url 'posts-follow-view' %}">My Account</a> 
                     <a href="{% url 'signout' %}"><i class="fas fa-sign-out-alt"></i></a>
                     {% else %}
