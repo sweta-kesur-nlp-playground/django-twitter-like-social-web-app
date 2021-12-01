@@ -103,33 +103,58 @@
                                                                 </div>
                                                             </form>
                                                             <br><br>
-                                                          <h1>Activity Log</h1>
+                                                          <!-- <h1>Activity Log</h1> -->
                                                             <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
                                                               <thead>
                                                                   <tr>
-                                                                      <th class="product-number">#</th>
-                                                                      <th class="product-name">Author</th>
-                                                                      <th class="product-name">Posts</th>
-                                                                      <th class="product-name">Created on</th>
+                                                                      <th class="product-number"><i class="fas fa-history"></i></th>
+                                                                      <th class="product-name"><h3>Activity Log</h3></th>
                                                                   </tr>
                                                               </thead>
                                                               <tbody>
+                                                                  {% for p in profile.following.all %}
+                                                                    <tr>
+                                                                      <td >
+                                                                          <li></li>
+                                                                      </td>
+                                                                      <td class="post" data-title="Post">
+                                                                          {{p.username}} last seen on {{p.last_login}}
+                                                                      </td>
+                                                                    </tr>
+                                                                  {% endfor %}
                                                                   {% for post in posts %}
                                                                     <tr class="woocommerce-cart-form__cart-item cart_item">
-                                                                      <td class="product-number" data-title="Number">
-                                                                          {{forloop.counter}}
+                                                                      <td >
+                                                                          <li></li>
                                                                       </td>
-
                                                                       <td class="post" data-title="Post">
-                                                                          {{post.author}}
+                                                                          {{post.author}} posted "{{post.body}}"
                                                                       </td>
-
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td >
+                                                                          <li></li>
+                                                                      </td>
                                                                       <td class="post" data-title="Post">
-                                                                          {{post.body}}
+                                                                          {{post.author}} created a new post on {{post.author.created}}
                                                                       </td>
-
-                                                                      <td class="date" data-title="Created on">
-                                                                          {{post.created}}
+                                                                    </tr>
+                                                                  {% endfor %}
+                                                                  {% for p in profile.following.all %}
+                                                                    <tr>
+                                                                      <td >
+                                                                          <li></li>
+                                                                      </td>
+                                                                      <td class="post" data-title="Post">
+                                                                          {{p.username}} is a registered {% if p.is_staff %} Author. {% else %} Reader. {% endif %}
+                                                                      </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td >
+                                                                          <li></li>
+                                                                      </td>
+                                                                      <td class="post" data-title="Post">
+                                                                          {{p.username}} joined on {{p.date_joined}}
                                                                       </td>
                                                                     </tr>
                                                                   {% endfor %}

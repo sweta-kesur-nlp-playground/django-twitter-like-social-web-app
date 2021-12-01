@@ -127,33 +127,59 @@
                                                             </strong>
                                                         </div>
                                                         </div>
-                                                        <h1>Activity Log</h1>
-                                                            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-                                                              <thead>
-                                                                  <tr>
-                                                                      <th class="product-number">#</th>
-                                                                      <th class="product-name">Posts</th>
-                                                                      <th class="product-name">Created on</th>
-                                                                  </tr>
-                                                              </thead>
-                                                              <tbody>
-                                                                  {% for post in object.profiles_post %}
-                                                                    <tr class="woocommerce-cart-form__cart-item cart_item">
-                                                                      <td class="product-number" data-title="Number">
-                                                                          {{forloop.counter}}
-                                                                      </td>
-
-                                                                      <td class="post" data-title="Post">
-                                                                          {{post.body}}
-                                                                      </td>
-
-                                                                      <td class="date" data-title="Created on">
-                                                                          {{post.created}}
-                                                                      </td>
-                                                                    </tr>
-                                                                  {% endfor %}
-                                                              </tbody>
-                                                          </table>
+                                                        <!-- <h1>Activity Log</h1> -->
+                                                        <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                                                          <thead>
+                                                              <tr>
+                                                                  <th class="product-number"><i class="fas fa-history"></i></th>
+                                                                  <th class="product-name"><h3>Activity Log</h3></th>
+                                                              </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                                <tr>
+                                                                  <td >
+                                                                      <li></li>
+                                                                  </td>
+                                                                  <td class="post" data-title="Post">
+                                                                      {{object.user.username}} last seen on {{object.user.last_login}}
+                                                                  </td>
+                                                                </tr>
+                                                              {% for post in object.profiles_post %}
+                                                                <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                                  <td >
+                                                                      <li></li>
+                                                                  </td>
+                                                                  <td class="post" data-title="Post">
+                                                                      {{post.author}} posted "{{post.body}}"
+                                                                  </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td >
+                                                                      <li></li>
+                                                                  </td>
+                                                                  <td class="post" data-title="Post">
+                                                                      {{post.author}} created a new post on {{post.author.created}}
+                                                                  </td>
+                                                                </tr>
+                                                              {% endfor %}
+                                                                <tr>
+                                                                  <td >
+                                                                      <li></li>
+                                                                  </td>
+                                                                  <td class="post" data-title="Post">
+                                                                      {{object.user.username}} is a registered {% if object.user.is_staff %} Author. {% else %} Reader. {% endif %}
+                                                                  </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td >
+                                                                      <li></li>
+                                                                  </td>
+                                                                  <td class="post" data-title="Post">
+                                                                      {{object.user.username}} joined on {{object.user.date_joined}}
+                                                                  </td>
+                                                                </tr>
+                                                          </tbody>
+                                                      </table>
                                                     </div>
                                                 </div>
                                             </div>
