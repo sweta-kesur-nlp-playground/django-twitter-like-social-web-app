@@ -7,6 +7,7 @@ handler500 = 'babushka.views.handler500'
 
 urlpatterns = [
 	path('blog/', CommentView.as_view(), name="comment"), 
+	path('addpost/', views.AddPost, name="addpost"), 
 	path('blog/data', CommentListView.as_view(), name="commentlistview"),
 	path('switch_follow/', follow_unfollow_profile, name="follow-unfollow-view"),
 	path('profiles/', ProfileListView.as_view(), name="profile-list-view"), 

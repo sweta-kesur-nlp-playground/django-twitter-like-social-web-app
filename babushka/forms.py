@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import Comment, Message, BookUser, CustomUser
+from .models import Comment, Message, BookUser, CustomUser, Post
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -20,6 +20,12 @@ class MessageForm(forms.ModelForm):
 	class Meta:
 		model = Message
 		fields = ["name", "email", "message"]
+
+class PostForm(forms.ModelForm):
+
+	class Meta:
+		model = Post
+		fields = ["author", "body"]
 
 class RegisterForm(forms.ModelForm):
 

@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.shortcuts import render, redirect
 from .models import Comment, Message, BookUser, CustomUser, Profile
-from .forms import CommentForm, MessageForm, RegisterForm, CustomUserCreationForm
+from .forms import CommentForm, MessageForm, PostForm, CustomUserCreationForm
 from django.template import RequestContext
 from django.views import View
 from django.http import HttpResponse, JsonResponse
@@ -127,7 +127,6 @@ class MessageView(View):
 	def get(self,request, *args, **kwargs):
 	    return render(request, "contact.html", {})
 
-# Create your views here.
 def home(request):
 	return render(request, 'index.html', {});
 
@@ -197,5 +196,15 @@ class ProfileDetailView(DetailView):
 		context["follow"] = follow
 		return context
 
+def AddPost(request):
+	if request.method == 'POST':
+		author = Profile.objects.get(user=request.POST['author'])
+		body = request.POST['body']
+		post = Post(
+	        author = author,
+	        body = body)
+		post.save()
+		return JsonResponse({"message": "success"})
 
+	return render(request, 'post.html', {})
 
