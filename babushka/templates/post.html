@@ -93,7 +93,8 @@
                                                                                 <p class="form-row notes" id="order_comments_field" data-priority="">
                                                                                     <label for="addpost" class="">Add a new post</label>
                                                                                     <span class="woocommerce-input-wrapper validate">
-                                                                                        <input type="hidden" name="author" value="{{profile}}">
+                                                                                        {% csrf_token %}
+                                                                                        <input type="hidden" name="author" value="{{profile.id}}">
                                                                                         <textarea name="body" class="input-text" id="postmessage" placeholder="Write your experience of reading this book..." rows="5" cols="5"></textarea>
                                                                                     </span>
                                                                                 </p>

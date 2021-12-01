@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render, redirect
-from .models import Comment, Message, BookUser, CustomUser, Profile
+from .models import Comment, Message, BookUser, CustomUser, Profile, Post
 from .forms import CommentForm, MessageForm, PostForm, CustomUserCreationForm
 from django.template import RequestContext
 from django.views import View
