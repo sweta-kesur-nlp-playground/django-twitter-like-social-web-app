@@ -1,6 +1,6 @@
 from django.urls import path, include
 from . import views
-from .views import CommentView, CommentListView, MessageView, ProfileListView, ProfileDetailView, follow_unfollow_profile, posts_of_following_profiles
+from .views import CommentView, CommentListView, MessageView, ProfileListView, ProfileDetailView, follow_unfollow_profile, posts_of_following_profiles, UserUpdateView
 
 handler404 = 'babushka.views.handler404'
 handler500 = 'babushka.views.handler500'
@@ -23,5 +23,6 @@ urlpatterns = [
 	path('blog/', views.blog, name='blog'),
 	path('register/', views.register, name='register'),
 	path('signin/', views.signin, name='signin'),
+	path('editprofile/', UserUpdateView.as_view(), name='editprofile'),
     path('signout/', views.signout, name='signout'),
 ]

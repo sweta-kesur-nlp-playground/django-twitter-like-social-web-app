@@ -90,7 +90,7 @@
                                                                   </table>
                                                                   {% if user.username == object.user.username %}
                                                                   <div class="wc-proceed-to-checkout">
-                                                                      <a href="https://www.thestoryofbabushka.com/checkout/" class="checkout-button button alt wc-forward"> Edit Profile</a>
+                                                                      <a href="{% url 'editprofile' %}" class="checkout-button button alt wc-forward"> Edit Profile</a>
                                                                   </div>
                                                                   {% endif %}
                                                               </div>
@@ -121,8 +121,6 @@
                                                                         <button type="submit" class="ui negative button">User List</button>
                                                                       </form>
                                                                     {% endif %}
-
-                                                                    
                                                                 </code>
                                                             </strong>
                                                         </div>

@@ -3,13 +3,14 @@ from django.shortcuts import render, redirect
 from .models import Comment, Message, BookUser, CustomUser, Profile, Post
 from .forms import CommentForm, MessageForm, PostForm, CustomUserCreationForm
 from django.template import RequestContext
-from django.views import View
+from django.views import View, generic
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.models import auth
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, UpdateView
 from itertools import chain
 from django.contrib import messages
+from django.urls import reverse_lazy
 
 import facebook
 
@@ -82,6 +83,16 @@ def register(request):
 		return JsonResponse({"message": "success"})
 
 	return render(request, 'register.html', {})
+
+class UserUpdateView(generic.UpdateView):
+	# customuser = CustomUser.objects.get(pk=pk)
+	form_class = CustomUserCreationForm
+	template_name = 'editprofile.html'
+	success_url = reverse_lazy('signin')
+	# return render(request, 'editprofile.html', {'form':form});
+
+	def get_object(self):
+		return self.request.user
 
 def signin(request):
     if request.method == 'POST':
@@ -207,4 +218,5 @@ def AddPost(request):
 		return JsonResponse({"message": "success"})
 
 	return render(request, 'post.html', {})
+
 

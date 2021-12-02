@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>About - The Story of Babushka </title>
+        <!-- stylesheet and meta tag start -->
+        {% include 'head.html' %}
+        {% block content-head %}
+        {% endblock %}
+        <!-- stylesheet and meta tag end -->
+    </head>
+    <body class="page-template-default page page-id-552 custom-background theme-babushka woocommerce-checkout woocommerce-page woocommerce-js elementor-default product-template-default single single-product postid-32 custom-background theme-babushka woocommerce woocommerce-page woocommerce-no-js elementor-default">
+        <div class="contentwrapper">
+            <!-- Header start -->
+                {% include 'header.html' %}
+                {% block content-header %}
+                {% endblock %}
+            <!-- Header end -->
+
+            <div id="section" class="">
+                <section>
+                    <div class="container">
+                        <!-- Logo image start -->
+                        <div class="mainlogoblack" id="mainlogo">
+                            <a href="{% url 'home' %}">
+                                <noscript><img src="http://babushkastory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></noscript><img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E'
+                                data-src="http://babushkastory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></a>
+                        </div>
+                        <!-- Logo image end -->
+                    </div>
+                    <div class="container">
+                        <div id="primary" class="site-main aa">
+                            <article id="post-32" class="post-32 product type-product status-publish has-post-thumbnail product_cat-digital-ebook product_cat-outsource first instock shipping-taxable purchasable product-type-simple">
+                                <div class="row">
+                                    <div class="col-md-12 text-center feutered-img">
+                                        <div class="post-thumbnail"></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="entry-content">
+                                            <h1>The Story Of Babushka (eBook)</h1>
+                                            <div class="woocommerce">
+                                                <div class="single-product" data-product-page-preselected-id="0">
+                                                    <div class="woocommerce-notices-wrapper"></div>
+                                                    <div
+                                                        id="product-32"
+                                                        class="product type-product post-32 status-publish instock product_cat-digital-ebook product_cat-outsource has-post-thumbnail shipping-taxable purchasable product-type-simple"
+                                                    >
+                                                        <div
+                                                            class="woocommerce-product-gallery woocommerce-product-gallery--with-images"
+                                                            data-columns="4"
+                                                        >
+
+                                                            <div class="cart_totals">
+                                                                <h2>Edit Profile</h2>
+                                                                <form action="" method="POST">
+                                                                  {% csrf_token %}
+                                                                  {{form.as_p}}
+                                                                  <!-- <table cellspacing="0" class="shop_table shop_table_responsive">
+                                                                    
+                                                                    <input type="hidden" name="id" value="{{customuser.id}}">
+                                                                      <tbody>
+                                                                          <tr class="profile-username">
+                                                                              <th>Username</th>
+                                                                              <td data-title="Username">
+                                                                                <input type="text" class="input-text" disabled="" name="username" id="username" placeholder="" value="{{customuser.username}}" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+
+                                                                          <tr class="profile-firstname">
+                                                                              <th>First Name</th>
+                                                                              <td data-title="First Name">
+                                                                                <input type="text" class="input-text" name="first_name" id="firstname" placeholder="" value="{{customuser.first_name}}" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+                                                                          <tr class="profile-lastname">
+                                                                              <th>Last Name</th>
+                                                                              <td data-title="Last Name">
+                                                                                <input type="text" class="input-text" name="last_name" id="lastname" placeholder="" value="{{customuser.last_name}}"/>
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+                                                                          <tr class="profile-email">
+                                                                              <th>Email</th>
+                                                                              <td data-title="Email">
+                                                                                <input type="email" class="input-text" name="email" id="email" placeholder="" value="{{customuser.email}}"  />
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+                                                                          <tr class="profile-password">
+                                                                              <th>Password</th>
+                                                                              <td data-title="Password">
+                                                                                <input type="password" class="input-text" name="password" id="password" placeholder="" value="" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+                                                                          <tr class="profile-email">
+                                                                              <th>Confirm Password</th>
+                                                                              <td data-title="Confirm Password">
+                                                                                <input type="password" class="input-text" name="password2" id="confirmpassword" placeholder="" value="" />
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+                                                                          <tr class="profile-gender">
+                                                                              <th>Gender</th>
+                                                                              <td data-title="Gender">
+                                                                                <div>
+                                                                                    <input type="radio" id="female" name="gender" value="female" {% if customuser.gender == "female" %} checked {% endif %} >
+                                                                                    <label for="female">female</label>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <input type="radio" id="male" name="gender" value="male" {% if customuser.gender == "male" %} checked {% endif %} >
+                                                                                    <label for="male">male</label>
+                                                                                </div>
+                                                                                <div class="register-form-text-message"></div>
+                                                                              </td>
+                                                                          </tr>
+                                                                      </tbody>
+                                                                  </table> -->
+                                                                  <button type="submit" class="ui positive button">Update Profile</button>
+                                                                </form>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        <!-- Footer start -->
+            {% include 'footer.html' %}
+            {% block content-footer %}
+            {% endblock %}
+        <!-- Footer end -->
+    </body>
+</html>
