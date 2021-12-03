@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import Comment, Message, BookUser, CustomUser, Post, Profile
+from .models import Comment, Message, CustomUser, Post, Profile
 from .forms import CustomUserCreationForm
 from django.contrib.auth.admin import UserAdmin
 

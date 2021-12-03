@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render, redirect
-from .models import Comment, Message, BookUser, CustomUser, Profile, Post
+from .models import Comment, Message, CustomUser, Profile, Post
 from .forms import CommentForm, MessageForm, PostForm, CustomUserCreationForm
 from django.template import RequestContext
 from django.views import View, generic
@@ -66,20 +66,31 @@ def register(request):
 	if request.method == 'POST':
 		first_name = request.POST['first_name']
 		last_name = request.POST['last_name']
-		username1 = request.POST['username1']
+		username = request.POST['username']
 		password = request.POST['password']
 		password2 = request.POST['password2']
 		email = request.POST['email']
 		gender = request.POST['gender']
-		user1 = CustomUser.objects.create_user(
-	        first_name = first_name,
-	        last_name = last_name,
-	        username1 = username1,
-	        username = username1,
-	        password = password,
-	        email = email,
-	        gender = gender)
-		user1.save()
+		is_author = request.POST['is_author']
+		if is_author == True:
+			pass
+			user1 = CustomUser.objects.create_superuser(
+		        first_name = first_name,
+		        last_name = last_name,
+		        username = username,
+		        password = password,
+		        email = email,
+		        gender = gender)
+			user1.save()
+		else:
+			user1 = CustomUser.objects.create_user(
+		        first_name = first_name,
+		        last_name = last_name,
+		        username = username,
+		        password = password,
+		        email = email,
+		        gender = gender)
+			user1.save()
 		return JsonResponse({"message": "success"})
 
 	return render(request, 'register.html', {})
