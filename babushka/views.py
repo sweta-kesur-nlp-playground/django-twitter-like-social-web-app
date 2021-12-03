@@ -73,24 +73,23 @@ def register(request):
 		gender = request.POST['gender']
 		is_author = request.POST['is_author']
 		if is_author == True:
-			pass
-			user1 = CustomUser.objects.create_superuser(
+			userauthor = CustomUser.objects.create_superuser(
 		        first_name = first_name,
 		        last_name = last_name,
 		        username = username,
 		        password = password,
 		        email = email,
 		        gender = gender)
-			user1.save()
+			userauthor.save()
 		else:
-			user1 = CustomUser.objects.create_user(
+			userreader = CustomUser.objects.create_user(
 		        first_name = first_name,
 		        last_name = last_name,
 		        username = username,
 		        password = password,
 		        email = email,
 		        gender = gender)
-			user1.save()
+			userreader.save()
 		return JsonResponse({"message": "success"})
 
 	return render(request, 'register.html', {})
