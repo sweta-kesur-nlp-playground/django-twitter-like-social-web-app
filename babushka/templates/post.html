@@ -167,7 +167,7 @@
                                                                           <li></li>
                                                                       </td>
                                                                       <td class="post" data-title="Post">
-                                                                          {{profile.username}} is a registered {% if profile.is_staff %} Author. {% else %} Reader. {% endif %}
+                                                                          {{profile.user.username}} is a registered {% if profile.user.is_staff %} Author. {% else %} Reader. {% endif %}
                                                                       </td>
                                                                     </tr>
                                                                     <tr>
@@ -175,7 +175,7 @@
                                                                           <li></li>
                                                                       </td>
                                                                       <td class="post" data-title="Post">
-                                                                          {{profile.username}} joined on {{profile.date_joined}}
+                                                                          {{profile.user.username}} joined on {{profile.user.date_joined}}
                                                                       </td>
                                                                     </tr>
                                                               </tbody>
