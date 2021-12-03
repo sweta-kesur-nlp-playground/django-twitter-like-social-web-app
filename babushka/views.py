@@ -64,7 +64,6 @@ class CommentView(View):
 def register(request):
 
 	if request.method == 'POST':
-		is_author = "false"
 		first_name = request.POST['first_name']
 		last_name = request.POST['last_name']
 		username = request.POST['username']
@@ -80,16 +79,18 @@ def register(request):
 		        username = username,
 		        password = password,
 		        email = email,
-		        gender = gender)
+		        gender = gender,
+		        is_author = True)
 			userauthor.save()
-		else:
+		if is_author == "":
 			userreader = CustomUser.objects.create_user(
 		        first_name = first_name,
 		        last_name = last_name,
 		        username = username,
 		        password = password,
 		        email = email,
-		        gender = gender)
+		        gender = gender,
+		        is_author = False)
 			userreader.save()
 		return JsonResponse({"message": "success"})
 
