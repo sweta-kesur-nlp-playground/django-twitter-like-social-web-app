@@ -73,7 +73,7 @@ def register(request):
 		gender = request.POST['gender']
 		is_author = request.POST['is_author']
 		if is_author == "true":
-			userauthor = CustomUser.objects.create_user(
+			userauthor = CustomUser.objects.create_superuser(
 		        first_name = first_name,
 		        last_name = last_name,
 		        username = username,
@@ -83,7 +83,7 @@ def register(request):
 		        is_author = True)
 			userauthor.save()
 		else:
-			userreader = CustomUser.objects.create_user(
+			userreader = CustomUser.objects.create(
 		        first_name = first_name,
 		        last_name = last_name,
 		        username = username,
