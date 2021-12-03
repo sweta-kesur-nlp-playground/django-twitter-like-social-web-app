@@ -72,7 +72,7 @@ def register(request):
 		email = request.POST['email']
 		gender = request.POST['gender']
 		is_author = request.POST['is_author']
-		if is_author == True:
+		if is_author == "true":
 			userauthor = CustomUser.objects.create_superuser(
 		        first_name = first_name,
 		        last_name = last_name,
