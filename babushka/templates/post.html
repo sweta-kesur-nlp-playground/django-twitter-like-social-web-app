@@ -91,7 +91,7 @@
                                                                         <div class="woocommerce-additional-fields validate">
                                                                             <div class="woocommerce-additional-fields__field-wrapper validate">
                                                                                 <p class="form-row notes" id="order_comments_field" data-priority="">
-                                                                                    <label for="addpost" class="">Add a new post</label>
+                                                                                    <label for="addpost" class="">Add a new post {{profile.id}}</label>
                                                                                     <span class="woocommerce-input-wrapper validate">
                                                                                         {% csrf_token %}
                                                                                         <input type="hidden" name="author" value="{{profile.id}}">
