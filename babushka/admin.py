@@ -19,6 +19,12 @@ class CustomUserAdmin(UserAdmin):
 					'gender',
 				)
 			}
+			'Permissions',
+			{
+				'fields': (
+					'is_author',
+				)
+			}
 		)
 	)
 
