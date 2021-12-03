@@ -71,7 +71,7 @@ def register(request):
 		password2 = request.POST['password2']
 		email = request.POST['email']
 		gender = request.POST['gender']
-		is_author = request.POST['is_author']
+		is_author = request.POST.get('is_author', False)
 		if is_author == "true":
 			userauthor = CustomUser.objects.create_superuser(
 		        first_name = first_name,
@@ -83,7 +83,7 @@ def register(request):
 		        is_author = True)
 			userauthor.save()
 		else:
-			userreader = CustomUser.objects.create(
+			userreader = CustomUser.objects.create_user(
 		        first_name = first_name,
 		        last_name = last_name,
 		        username = username,
