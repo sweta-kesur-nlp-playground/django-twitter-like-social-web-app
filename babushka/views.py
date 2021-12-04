@@ -74,9 +74,9 @@ def register(request):
 		is_author = request.POST.get('is_author', False)
 
 		if password == password2:
-			if User.objects.filter(username=username).exists():
+			if CustomUser.objects.filter(username=username).exists():
 				return JsonResponse({"message": "Username taken"})
-			elif User.objects.filter(email=email).exists():
+			elif CustomUser.objects.filter(email=email).exists():
 				return JsonResponse({"message": "Email taken"})
 			else:
 				if is_author == "true":
