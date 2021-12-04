@@ -55,6 +55,13 @@
                                                                 <table cellspacing="0" class="shop_table shop_table_responsive">
                                                                 <form action="" method="POST">
                                                                   {% csrf_token %}
+                                                                  <tr class="profile-username">
+                                                                      <th>Username</th>
+                                                                      <td data-title="Username">
+                                                                        <input type="text" class="input-text" disabled="" placeholder="" value="{{customuser.username}}" />
+                                                                        <div class="register-form-text-message"></div>
+                                                                      </td>
+                                                                  </tr>
                                                                   {{form.as_table}}
                                                                     
                                                                     <!-- <input type="hidden" name="id" value="{{customuser.id}}">
