@@ -117,7 +117,8 @@ def signin(request):
             auth.login(request, user)
             return redirect('posts-follow-view')
         else:
-            return JsonResponse({"message": "Invalid username or password"})
+            messages.info(request, 'Invalid credentials')
+            return redirect('signin')
 
     context = {}
     return render(request, 'register.html', context)

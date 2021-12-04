@@ -177,50 +177,52 @@
         <!-- Footer end -->
         <script type="text/javascript">
             // Login Form
-            $("#loginform").on("submit", function(e){
-                var $this = $(this);
-                var valid = true;
-                $('#loginform input').each(function() {
-                    let $this = $(this);
+            // $("#loginform").on("submit", function(e){
+            //     e.preventDefault();
+            //     e.stopPropagation();
+            //     var $this = $(this);
+            //     var valid = true;
+            //     $('#loginform input').each(function() {
+            //         let $this = $(this);
                     
-                    if(!$this.val()) {
-                        valid = false;
-                        $this.parents('.login-validate-required').find('.login-form-text-message').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
-                        $this.parents('.login-validate-required').find('.login-form-text-message').css({'color':'#a00'});
-                        $this.parents('.login-validate-required').find('input').css({'border-color': '#a00'});
-                        $this.parents('.login-validate-required').find('label').css({'color': '#a00'});
-                        $(this).parents('.login-validate-required').find('.login-form-text-message').css({'display': 'block'});
-                        $this.parents('.login-validate-required').find('input').click(function(){
-                            $(this).css({'border-color': '#6dc22e'});
-                            $(this).parents('.login-validate-required').find('label').css({'color': 'black'});
-                            $(this).parents('.login-validate-required').find('.login-form-text-message').css({'display': 'none'});
-                        });
-                    }
-                });
-                if(valid){
-                    let data = $this.serialize();
-                    $.ajax({
-                        url: $this.attr("action"),
-                        type: "POST",
-                        data: data,
-                        dataType: "json",
-                        success: function(resp){
-                            if(resp.message == "success"){
-                                // alert("Saved successful");
-                                $("#loginform")[0].reset();
-                                $(".login-form-message").append("Login success").fadeOut(10000);
-                            }
-                            else{
-                                alert(resp.message);
-                            }
-                        },
-                        error: function(resp){
-                            $(".login-form-message").append("Invalid username or password").fadeOut(10000);
-                        }
-                    });
-                }
-                return false;
-            });
+            //         if(!$this.val()) {
+            //             valid = false;
+            //             $this.parents('.login-validate-required').find('.login-form-text-message').text('The '+$this.attr('name').replace(/[\_]+/g, ' ')+' field is required');
+            //             $this.parents('.login-validate-required').find('.login-form-text-message').css({'color':'#a00'});
+            //             $this.parents('.login-validate-required').find('input').css({'border-color': '#a00'});
+            //             $this.parents('.login-validate-required').find('label').css({'color': '#a00'});
+            //             $(this).parents('.login-validate-required').find('.login-form-text-message').css({'display': 'block'});
+            //             $this.parents('.login-validate-required').find('input').click(function(){
+            //                 $(this).css({'border-color': '#6dc22e'});
+            //                 $(this).parents('.login-validate-required').find('label').css({'color': 'black'});
+            //                 $(this).parents('.login-validate-required').find('.login-form-text-message').css({'display': 'none'});
+            //             });
+            //         }
+            //     });
+            //     // if(valid){
+            //     //     let data = $this.serialize();
+            //     //     $.ajax({
+            //     //         url: $this.attr("action"),
+            //     //         type: "POST",
+            //     //         data: data,
+            //     //         dataType: "json",
+            //     //         success: function(resp){
+            //     //             if(resp.message == "success"){
+            //     //                 // alert("Saved successful");
+            //     //                 $("#commentform")[0].reset();
+            //     //                 $(".form-message").append("Comment added successfully").fadeOut(10000);
+            //     //             }
+            //     //             else{
+            //     //                 alert(resp.message);
+            //     //             }
+            //     //         },
+            //     //         error: function(resp){
+            //     //             $(".form-message").append("Couldn't save data. Something went wrong").fadeOut(10000);
+            //     //         }
+            //     //     });
+            //     // }
+            //     // return false;
+            // });
             // Register Form
             $("#registerform").on("submit", function(e){
                 e.preventDefault();
