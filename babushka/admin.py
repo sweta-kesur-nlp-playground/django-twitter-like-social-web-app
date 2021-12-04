@@ -13,7 +13,7 @@ class CustomUserAdmin(UserAdmin):
 	fieldsets = (
 		*UserAdmin.fieldsets,
 		(
-			'Gender',
+			'Additional fields',
 			{
 				'fields': (
 					'gender', 'is_author'
