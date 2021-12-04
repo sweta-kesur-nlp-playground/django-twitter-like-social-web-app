@@ -178,8 +178,6 @@
         <script type="text/javascript">
             // Login Form
             $("#loginform").on("submit", function(e){
-                e.preventDefault();
-                e.stopPropagation();
                 var $this = $(this);
                 var valid = true;
                 $('#loginform input').each(function() {
