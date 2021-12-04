@@ -62,7 +62,7 @@
                                                                           <tr class="profile-username">
                                                                               <th>Username</th>
                                                                               <td data-title="Username">
-                                                                                {{ form.username }}
+                                                                                {{ form.username | as_crispy_field }}
                                                                                 <input type="text" class="input-text" disabled="" name="username" id="username" placeholder="" value="{{customuser.username}}" />
                                                                                 <div class="register-form-text-message"></div>
                                                                               </td>
