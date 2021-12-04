@@ -72,27 +72,43 @@ def register(request):
 		email = request.POST['email']
 		gender = request.POST['gender']
 		is_author = request.POST.get('is_author', False)
-		if is_author == "true":
-			userauthor = CustomUser.objects.create_superuser(
-		        first_name = first_name,
-		        last_name = last_name,
-		        username = username,
-		        password = password,
-		        email = email,
-		        gender = gender,
-		        is_author = True)
-			userauthor.save()
+
+		if password == password2: 
+            
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'Username taken')
+                return redirect('register')
+
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, 'Email taken')
+                return redirect('register')
+
+            else:
+				if is_author == "true":
+					userauthor = CustomUser.objects.create_superuser(
+				        first_name = first_name,
+				        last_name = last_name,
+				        username = username,
+				        password = password,
+				        email = email,
+				        gender = gender,
+				        is_author = True)
+					userauthor.save()
+				else:
+					userreader = CustomUser.objects.create_user(
+				        first_name = first_name,
+				        last_name = last_name,
+				        username = username,
+				        password = password,
+				        email = email,
+				        gender = gender,
+				        is_author = False)
+					userreader.save()
+				return JsonResponse({"message": "success"})
+
 		else:
-			userreader = CustomUser.objects.create_user(
-		        first_name = first_name,
-		        last_name = last_name,
-		        username = username,
-		        password = password,
-		        email = email,
-		        gender = gender,
-		        is_author = False)
-			userreader.save()
-		return JsonResponse({"message": "success"})
+            messages.info(request, 'Password not matching...')
+            return redirect('register')
 
 	return render(request, 'register.html', {})
 

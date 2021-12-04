@@ -265,6 +265,7 @@
                             }
                         },
                         error: function(resp){
+                            alert(resp.message);
                             $(".register-form-message").text("Couldn't save data. Something went wrong");
                         }
                     });
