@@ -54,15 +54,14 @@
                                                                 <h2>Edit Profile</h2>
                                                                 <form action="" method="POST">
                                                                   {% csrf_token %}
-                                                                  {{form.as_p}}
-                                                                  <table cellspacing="0" class="shop_table shop_table_responsive">
+                                                                  {{form.as_table}}
+                                                                  <!-- <table cellspacing="0" class="shop_table shop_table_responsive">
                                                                     
                                                                     <input type="hidden" name="id" value="{{customuser.id}}">
                                                                       <tbody>
                                                                           <tr class="profile-username">
                                                                               <th>Username</th>
                                                                               <td data-title="Username">
-                                                                                {{ form.username | as_crispy_field }}
                                                                                 <input type="text" class="input-text" disabled="" name="username" id="username" placeholder="" value="{{customuser.username}}" />
                                                                                 <div class="register-form-text-message"></div>
                                                                               </td>
@@ -118,7 +117,7 @@
                                                                               </td>
                                                                           </tr>
                                                                       </tbody>
-                                                                  </table>
+                                                                  </table> -->
                                                                   <button type="submit" class="ui positive button">Update Profile</button>
                                                                 </form>
                                                               </div>
