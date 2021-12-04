@@ -61,7 +61,9 @@
                                                                 </div>
                                                             </div>
                                                             <button type="submit" class="button alt" name="login" id="login" value="Login" data-value="Login">Login</button>
-                                                            <div class="login-form-message">{{messages}}</div>
+                                                            {% for message in messages %}
+                                                                <div class="login-form-message">{{message}}</div>
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </form>
