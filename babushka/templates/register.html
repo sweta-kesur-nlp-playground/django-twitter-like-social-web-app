@@ -260,7 +260,16 @@
                                 $("#registerform")[0].reset();
                                 $(".register-form-message").text("Registration completed successfully. Please Login now.");
                             }
-                            else{
+                            else if(resp.message == "Password not matching"){
+                                $(".register-form-message").text("Password not matching...");
+                            }
+                            else if(resp.message == "Username taken"){
+                                $(".register-form-message").text("Username taken");
+                            }
+                            else if(resp.message == "Email taken"){
+                                $(".register-form-message").text("Email taken");
+                            }
+                            else {
                                 alert(resp.message);
                             }
                         },

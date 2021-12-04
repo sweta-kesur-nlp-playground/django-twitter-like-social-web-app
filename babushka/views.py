@@ -76,12 +76,14 @@ def register(request):
 		if password == password2: 
             
             if User.objects.filter(username=username).exists():
-                messages.info(request, 'Username taken')
-                return redirect('register')
+                return JsonResponse({"message": "Username taken"})
+                # messages.info(request, 'Username taken')
+                # return redirect('register')
 
             elif User.objects.filter(email=email).exists():
-                messages.info(request, 'Email taken')
-                return redirect('register')
+            	return JsonResponse({"message": "Email taken"})
+                # messages.info(request, 'Email taken')
+                # return redirect('register')
 
             else:
 				if is_author == "true":
@@ -107,8 +109,9 @@ def register(request):
 				return JsonResponse({"message": "success"})
 
 		else:
-            messages.info(request, 'Password not matching...')
-            return redirect('register')
+			return JsonResponse({"message": "Password not matching"})
+            # messages.info(request, 'Password not matching...')
+            # return redirect('register')
 
 	return render(request, 'register.html', {})
 
