@@ -6,7 +6,7 @@ from django.template import RequestContext
 from django.views import View, generic
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from django.contrib.auth.models import auth
+from django.contrib.auth.models import auth, User
 from django.views.generic import ListView, DetailView, UpdateView
 from itertools import chain
 from django.contrib import messages
