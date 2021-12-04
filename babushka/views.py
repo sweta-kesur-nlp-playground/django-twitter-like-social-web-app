@@ -73,19 +73,12 @@ def register(request):
 		gender = request.POST['gender']
 		is_author = request.POST.get('is_author', False)
 
-		if password == password2: 
-            
-            if User.objects.filter(username=username).exists():
-                return JsonResponse({"message": "Username taken"})
-                # messages.info(request, 'Username taken')
-                # return redirect('register')
-
-            elif User.objects.filter(email=email).exists():
-            	return JsonResponse({"message": "Email taken"})
-                # messages.info(request, 'Email taken')
-                # return redirect('register')
-
-            else:
+		if password == password2:
+			if User.objects.filter(username=username).exists():
+				return JsonResponse({"message": "Username taken"})
+			elif User.objects.filter(email=email).exists():
+				return JsonResponse({"message": "Email taken"})
+			else:
 				if is_author == "true":
 					userauthor = CustomUser.objects.create_superuser(
 				        first_name = first_name,
