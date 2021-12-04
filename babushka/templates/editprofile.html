@@ -52,10 +52,10 @@
 
                                                             <div class="cart_totals">
                                                                 <h2>Edit Profile</h2>
+                                                                <table cellspacing="0" class="shop_table shop_table_responsive">
                                                                 <form action="" method="POST">
                                                                   {% csrf_token %}
                                                                   {{form.as_table}}
-                                                                  <!-- <table cellspacing="0" class="shop_table shop_table_responsive">
                                                                     
                                                                     <input type="hidden" name="id" value="{{customuser.id}}">
                                                                       <tbody>
@@ -117,7 +117,7 @@
                                                                               </td>
                                                                           </tr>
                                                                       </tbody>
-                                                                  </table> -->
+                                                                  </table>
                                                                   <button type="submit" class="ui positive button">Update Profile</button>
                                                                 </form>
                                                               </div>
