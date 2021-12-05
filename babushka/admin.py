@@ -30,11 +30,19 @@ class MessageAdmin(admin.ModelAdmin):
 	list_display = ('name', 'email')
 	list_filter = ('name',)
 
+class PostAdmin(admin.ModelAdmin):
+	list_display = ('author', 'created')
+	list_filter = ('author',)
+
+class ProfileAdmin(admin.ModelAdmin):
+	list_display = ('user', 'created')
+	list_filter = ('user',)
+
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Post)
-admin.site.register(Profile)
+admin.site.register(Post, PostAdmin)
+admin.site.register(Profile, ProfileAdmin)
 
 admin.site.unregister(Group)
 
