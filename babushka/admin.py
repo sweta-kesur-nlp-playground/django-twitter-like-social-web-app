@@ -32,11 +32,11 @@ class MessageAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('author', 'created')
-	list_filter = ('author',)
+	list_filter = ('author', 'created')
 
 class ProfileAdmin(admin.ModelAdmin):
 	list_display = ('user', 'created')
-	list_filter = ('user',)
+	list_filter = ('user', 'created')
 
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Message, MessageAdmin)
