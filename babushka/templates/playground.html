@@ -27,10 +27,37 @@
         </section>
         <audio src="http://babushkahistory.herokuapp.com/static/img/Short-Test-2.mp3"></audio> <button id="button"><i class="fas fa-volume-mute" aria-hidden="true"></i></button>
     </div>
-        <!-- Footer start -->
-            {% include 'footer.html' %}
-            {% block content-footer %}
-            {% endblock %}
-        <!-- Footer end -->
+    <noscript>
+        <style>
+            .lazyload {
+                display: none;
+            }
+        </style>
+    </noscript>
+    <!-- Footer start -->
+        {% include 'footer.html' %}
+        {% block content-footer %}
+        {% endblock %}
+    <!-- Footer end -->
+    <script>
+      // Button click for audio code
+      const button = document.querySelector("#button");
+      const icon = document.querySelector("#button > i");
+      const audio = document.querySelector("audio");
+
+      button.addEventListener("click", () => {
+          if (audio.paused) {
+              audio.volume = 0.2;
+              audio.play();
+              icon.classList.remove("fa-volume-mute");
+              icon.classList.add("fa-volume-up");
+          } else {
+              audio.pause();
+              icon.classList.remove("fa-volume-up");
+              icon.classList.add("fa-volume-mute");
+          }
+          button.classList.add("fade");
+      });
+  </script>
     </body>
 </html>
