@@ -75,14 +75,14 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <h2 class="center green">Please leave a review of my book on our Facebook Page</h2>
+                                <h2 class="center green">Write updates on the Facebook Page</h2>
                                 <p><strong>Post on our facebook page's feed from here: </strong></p>
                                 <p>
                                     <form action="{% url 'about' %}" method="post" class="wpcf7-form" novalidate="novalidate">
                                         {% csrf_token %}
                                         <div class="col-12">
                                             <span class="wpcf7-form-control-wrap your-message">
-                                                <textarea name="content" cols="40" rows="10" required class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Please enter the message..."></textarea> 
+                                                <textarea name="content" cols="40" rows="10" aria-required="true" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Please enter the message..."></textarea> 
                                             </span>
                                             <br>
                                             <input type="submit" value="Post Message" class="wpcf7-form-control wpcf7-submit">
