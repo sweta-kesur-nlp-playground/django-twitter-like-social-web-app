@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
     <head>
-        <title>About - The Story of Babushka </title>
+        <title>Playground - The Story of Babushka </title>
         <!-- stylesheet and meta tag start -->
         {% include 'head.html' %}
         {% block content-head %}
@@ -18,27 +18,14 @@
         <!-- Header end -->
         <section class="wrapper_img">
             <div id="section" style="display: block;"></div>
-            <div class="container" id="mainlogo">
-                <div class="mainlogoblack">
-                    <a href="index.html">
-                        <noscript>&lt;img src="wp-content/themes/babushka/images/Logo_white.svg" alt="Logo White"&gt;</noscript>
-                        <img
-                            class="lazyload"
-                            src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
-                            data-src="https://www.thestoryofbabushka.com/wp-content/themes/babushka/images/Logo_white.svg"
-                            alt="Logo White"
-                        />
-                    </a>
-                </div>
-            </div>
             <div id="illustration">
-                <object type="image/svg+xml" class="object-mainsc" data="wp-content/uploads/2020/06/Web.svg" id="object">
+                <object type="image/svg+xml" class="object-mainsc" data="http://babushkahistory.herokuapp.com/static/img/Web.svg" id="object">
                     <noscript>&lt;img src="#" alt="No SVG support"&gt;</noscript>
                     <img class="lazyload" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E" data-src="" alt="No SVG support" />
                 </object>
             </div>
         </section>
-        <audio src="wp-content/uploads/2020/07/Short-Test-2.mp3"></audio> <button id="button"><i class="fas fa-volume-mute" aria-hidden="true"></i></button>
+        <audio src="http://babushkahistory.herokuapp.com/static/img/Short-Test-2.mp3"></audio> <button id="button"><i class="fas fa-volume-mute" aria-hidden="true"></i></button>
     </div>
         <!-- Footer start -->
             {% include 'footer.html' %}
