@@ -16,9 +16,10 @@
                         {% endif %}
                     <a href="{% url 'posts-follow-view' %}">My Account</a> 
                         {% for p in profile.following.all %}
+                            {{if p.username == 'antonia'}}
                             {{p}}
-                                <a class="wpmenucart-contents" href="" title="View your shopping cart"><i class="wpmenucart-icon-shopping-cart-0" role="img" aria-label="Basket"></i><span class="cartcontents">1 </span><span class="amount">$0.00</span></a>
-                            
+                            <a class="wpmenucart-contents" href="" title="View your shopping cart"><i class="wpmenucart-icon-shopping-cart-0" role="img" aria-label="Basket"></i><span class="cartcontents">1 </span><span class="amount">$0.00</span></a>
+                            {% endif %}
                         {% endfor %}
                     <a href="{% url 'signout' %}"><i class="fas fa-sign-out-alt"></i></a>
                     {% else %}
