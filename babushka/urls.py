@@ -25,4 +25,5 @@ urlpatterns = [
 	path('signin/', views.signin, name='signin'),
 	path('editprofile/', UserUpdateView.as_view(), name='editprofile'),
     path('signout/', views.signout, name='signout'),
+    path('playground/', views.playground, name='playground'),
 ]

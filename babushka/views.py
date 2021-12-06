@@ -191,8 +191,8 @@ def about(request):
 def blog(request):
 	return render(request, 'blog.html', {});
 
-# def register(request):
-# 	return render(request, 'register.html', {});
+def playground(request):
+	return render(request, 'playground.html', {});
 
 def contact(request):
 	return render(request, 'contact.html', {});
