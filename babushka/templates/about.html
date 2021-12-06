@@ -69,7 +69,9 @@
                         </div>
                     </div>
                 </section>
-                <!-- <section class="padd8 second-sec reviews">
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                <section class="padd8 second-sec reviews">
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -90,7 +92,9 @@
                             </div>
                         </div>
                     </div>
-                </section> -->
+                </section>
+                    {% endif %}
+                {% endif %}
                 <section class="padd8 third-sec">
                     <div class="container">
                         <div class="row">

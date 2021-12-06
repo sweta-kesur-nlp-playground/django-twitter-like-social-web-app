@@ -175,16 +175,16 @@ def footer(request):
 	return render(request, 'footer.html', {});
 
 def about(request):
-	# if request.method == 'POST':
-	# 	content = request.POST.get('content')
+	if request.method == 'POST':
+		content = request.POST.get('content')
 
-	# 	if content:
-	# 		print('Content:', content)
+		if content:
+			print('Content:', content)
 
-	# 		fbpost = facebook.GraphAPI(settings.ACCESS_TOKEN)
-	# 		fbpost.put_object("me", "feed", message=content)
+			fbpost = facebook.GraphAPI(settings.ACCESS_TOKEN)
+			fbpost.put_object("me", "feed", message=content)
 
-	# 		return redirect('about')
+			return redirect('about')
 	
 	return render(request, 'about.html', {});
 
