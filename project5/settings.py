@@ -30,7 +30,7 @@ TEMPLATE_DIRS = (
 SECRET_KEY = 'django-insecure-uo#&%n5d_b=n&(*9r4b4x!qtislg^(x41s9s73)e!ilk@$)7ml'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]','babushkahistory.herokuapp.com']
 
