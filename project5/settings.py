@@ -27,7 +27,7 @@ TEMPLATE_DIRS = (
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uo#&%n5d_b=n&(*9r4b4x!qtislg^(x41s9s73)e!ilk@$)7ml'
+SECRET_KEY = 'YOUR SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]','babushkahistory.herokuapp.co
 
 # Facebook credentials
 
-ACCESS_TOKEN = 'EAAIiAV3U0vEBAPX7Nuon4A6ZCpPDABpbAwhZClHMmtCWrHRJU8v3oZBMOEn4vgHt1wCjHMYZCIF5RxoPRAkzw80c1CkpSB0QnqGuqLw9ZBN0asew6NCaYg2AnjJqtDuiqN3qLgdG2lZCZC5jz6ABQYkiycBHvK87ZBiEr4vkDxJvJd8V7ufLFgyE'
+ACCESS_TOKEN = 'YOUR ACCESS_TOKEN'
 
 # Application definition
 
