@@ -14,7 +14,6 @@ There are some library requirements for the project. For further details about t
 * `facebook-sdk`
 
 ![readme pdf](https://github.com/sweta-kesur-nlp-playground/django-twitter-like-social-web-app/blob/master/readmepdf/readmepdf-2.jpg)
-![readme pdf](https://github.com/sweta-kesur-nlp-playground/django-twitter-like-social-web-app/blob/master/readmepdf/readmepdf-3.jpg)
 ## Contact 
 
 Feel free to contact me on any of my social media accounts if you encounter any difficulties in running this project.
