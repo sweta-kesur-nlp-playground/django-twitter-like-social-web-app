@@ -22,8 +22,8 @@
                     <!-- Logo image start -->
                     <div class="mainlogoblack" id="mainlogo">
                         <a href="{% url 'home' %}">
-                            <noscript><img src="http://babushkastory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></noscript><img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E'
-                            data-src="http://babushkastory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></a>
+                            <noscript><img src="https://babushkahistory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></noscript><img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E'
+                            data-src="https://babushkahistory.herokuapp.com/static/img/Logo_black.svg" alt="logo black"></a>
                     </div>
                     <!-- Logo image end -->
                 </div>
@@ -32,7 +32,7 @@
                         <noscript><img src="{% static 'img/butterfly_1.svg'%}" class="rounded mx-auto d-block padd4 butterfly" alt="butterfly" /></noscript>
                         <img
                             src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E"
-                            data-src="http://babushkastory.herokuapp.com/static/img/butterfly_1.svg"
+                            data-src="https://babushkahistory.herokuapp.com/static/img/butterfly_1.svg"
                             class="lazyload rounded mx-auto d-block padd4 butterfly"
                             alt="butterfly"
                         />
@@ -144,7 +144,7 @@
                     success: function(data){
                         $.each(JSON.parse(data), function(index, item) {
                             console.log(item.fields.name +', '+ item.fields.comment);
-                            $('article.comment-body').append('<footer class="comment-meta"><div class="comment-author vcard"><img src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3C/svg%3E" data-src="http://babushkastory.herokuapp.com/static/img/avatar-100x100.png" width="32" height="32" alt="Avatar" class="lazyload avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default" /> <b class="fn">'+ item.fields.name +' </b> <span class="says">says:</span></div></footer><div class="comment-content"><p> '+ item.fields.comment+'</p></div> ');
+                            $('article.comment-body').append('<footer class="comment-meta"><div class="comment-author vcard"><img src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3C/svg%3E" data-src="https://babushkahistory.herokuapp.com/static/img/avatar-100x100.png" width="32" height="32" alt="Avatar" class="lazyload avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default" /> <b class="fn">'+ item.fields.name +' </b> <span class="says">says:</span></div></footer><div class="comment-content"><p> '+ item.fields.comment+'</p></div> ');
                         });
                     },
                     error: function(resp){
